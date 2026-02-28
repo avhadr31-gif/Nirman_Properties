@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirman Properties | Luxury Real Estate Consultants in Kalyan East</title>
+    <meta name="description" content="Discover luxury apartments and premium real estate solutions in Kalyan East. Expert consultation for your dream home with Nirman Properties.">
+    <meta name="keywords" content="real estate Kalyan East, luxury apartments, property consultants Mumbai, Nirman Properties">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Nirman Properties | Luxury Real Estate Consultants in Kalyan East">
+    <meta property="og:description" content="Curating exceptional living experiences in Kalyan Dombivli. Explore premium projects and services.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80">
+    <meta property="og:url" content="https://nirmanproperties.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        /* ---------- RESET & VARIABLES (DARK MODE ONLY) ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Permanent dark theme colors (no light mode) */
+            --primary: #F5F3EF;        /* primary text / headings (light) */
+            --secondary: #1E1E1E;       /* background for cards, footer */
+            --accent: #A8B98A;           /* soft green accent */
+            --terracotta: #D46A4C;       /* warm terracotta */
+            --gold: #D4B887;             /* warm gold */
+            --bg: #121212;                /* main background */
+            --text: #F5F3EF;              /* body text */
+            --card: #1E1E1E;               /* card background */
+            --border: #333333;             /* borders */
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --header-height: 80px;
+            --gold-rgb: 212, 184, 135;
+            --secondary-rgb: 30, 30, 30;
+        }
+
+        body.light {
+            --primary: #1E1E1E;        /* primary text / headings (dark) */
+            --secondary: #F5F3EF;       /* background for cards, footer */
+            --accent: #A8B98A;           /* soft green accent */
+            --terracotta: #D46A4C;       /* warm terracotta */
+            --gold: #D4B887;             /* warm gold */
+            --bg: #F5F3EF;                /* main background */
+            --text: #1E1E1E;              /* body text */
+            --card: #FFFFFF;               /* card background */
+            --border: #E0E0E0;             /* borders */
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --gold-rgb: 212, 184, 135;
+            --secondary-rgb: 245, 243, 239;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* ---------- ENHANCED HEADER (permanent dark) ---------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            background-color: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 184, 135, 0.15);
+            transition: var(--transition);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        body.light header {
+            background-color: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid rgba(212, 184, 135, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+            z-index: 1001;
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover .logo-icon svg {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .logo-text .tagline {
+            font-size: 10px;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 8px 0;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .main-nav a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .main-nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .main-nav a:hover:after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone-number {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(212, 184, 135, 0.1);
+            transition: var(--transition);
+        }
+
+        body.light .phone-number {
+            background: rgba(212, 184, 135, 0.05);
+        }
+
+        .phone-number:hover {
+            background: rgba(212, 184, 135, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 184, 135, 0.3);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+            position: relative;
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(212, 184, 135, 0.1);
+            transform: rotate(180deg);
+        }
+
+        body.light .theme-toggle {
+            color: var(--gold);
+        }
+
+        body.light .theme-toggle:hover {
+            background: rgba(212, 184, 135, 0.05);
+        }
+
+        /* Mobile menu button (no theme toggle) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(212, 184, 135, 0.1);
+        }
+
+        body.light .mobile-menu-btn:hover {
+            background: rgba(212, 184, 135, 0.05);
+        }
+
+        .mobile-menu-btn .bar {
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mobile-menu-btn .bar:before,
+        .mobile-menu-btn .bar:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn .bar:before {
+            transform: translateY(-8px);
+        }
+
+        .mobile-menu-btn .bar:after {
+            transform: translateY(8px);
+        }
+
+        .mobile-menu-btn.active .bar {
+            background: transparent;
+        }
+
+        .mobile-menu-btn.active .bar:before {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-btn.active .bar:after {
+            transform: rotate(-45deg);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: calc(100vh - var(--header-height));
+            background: var(--secondary);
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        body.light .mobile-nav {
+            background: var(--secondary);
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .mobile-nav.active li {
+            animation: slideIn 0.5s forwards;
+        }
+
+        .mobile-nav li:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-nav li:nth-child(2) { animation-delay: 0.2s; }
+        .mobile-nav li:nth-child(3) { animation-delay: 0.3s; }
+        .mobile-nav li:nth-child(4) { animation-delay: 0.4s; }
+        .mobile-nav li:nth-child(5) { animation-delay: 0.5s; }
+        .mobile-nav li:nth-child(6) { animation-delay: 0.6s; }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .mobile-nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 184, 135, 0.1);
+            transition: var(--transition);
+        }
+
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 10px;
+        }
+
+        .mobile-nav-actions {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav-actions .phone-number {
+            justify-content: center;
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .mobile-nav-actions .btn-outline {
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        header.scrolled {
+            height: 70px;
+            background-color: rgba(30, 30, 30, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        body.light header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ---------- HERO (heading color changed to white) ---------- */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: var(--secondary);
+            margin-top: var(--header-height);
+            padding: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3);
+            transition: filter 0.5s ease;
+        }
+
+        body.light .hero-bg img {
+            filter: brightness(0.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.6));
+            z-index: -1;
+        }
+
+        body.light .hero-overlay {
+            background: linear-gradient(45deg, rgba(245, 243, 239, 0.8), rgba(245, 243, 239, 0.5));
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--primary); /* changed to white/light */
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            color: rgba(245, 243, 239, 0.9);
+        }
+
+        body.light .hero-subtitle {
+            color: rgba(30, 30, 30, 0.9);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 18px 40px;
+            background: var(--gold);
+            color: var(--secondary);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ---------- STATS with animation ---------- */
+        .stats {
+            padding: 80px 0;
+            background: var(--card);
+        }
+
+        body.light .stats {
+            background: var(--card);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            animation: floatGlow 4s infinite ease-in-out;
+        }
+
+        body.light .stat-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        @keyframes floatGlow {
+            0% { box-shadow: 0 5px 20px rgba(212, 184, 135, 0.1); }
+            50% { box-shadow: 0 15px 30px rgba(212, 184, 135, 0.3); transform: translateY(-5px); }
+            100% { box-shadow: 0 5px 20px rgba(212, 184, 135, 0.1); }
+        }
+
+        .stat-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover:before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .stat-icon i {
+            color: var(--secondary);
+            font-size: 28px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stat-text {
+            color: var(--text);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ---------- ABOUT (why choose us) improved mobile ---------- */
+        .about {
+            background: var(--bg);
+        }
+
+        body.light .about {
+            background: var(--bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text);
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            transition: transform 0.7s ease, box-shadow 0.5s;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02) rotate(0.5deg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* mobile adjustments for about */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-image img {
+                height: auto;
+                max-height: 350px;
+                width: 100%;
+                object-fit: cover;
+            }
+            .about-text {
+                padding: 0 10px;
+            }
+        }
+
+        /* ---------- PROJECTS ---------- */
+        .featured-projects {
+            background: var(--bg);
+        }
+
+        body.light .featured-projects {
+            background: var(--bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background: var(--terracotta);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            color: var(--text);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            animation: cardPulse 5s infinite;
+        }
+
+        body.light .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        @keyframes cardPulse {
+            0% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 20px 35px -5px rgba(212,184,135,0.2); }
+            100% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+        }
+
+        body.light @keyframes cardPulse {
+            0% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 20px 35px -5px rgba(212,184,135,0.2); }
+            100% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--terracotta);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .project-location {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-features {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .feature span {
+            font-size: 12px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* ---------- VIRTUAL TOUR ---------- */
+        .virtual-tour {
+            background: linear-gradient(45deg, var(--secondary), var(--card));
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light .virtual-tour {
+            background: linear-gradient(45deg, var(--secondary), var(--card));
+        }
+
+        .virtual-tour:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://super.homelane.com/paid_pages/v3/interiors/3.webp') center/cover;
+            opacity: 0.6;
+            animation: slowZoom 20s infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .virtual-tour-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .virtual-tour h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .virtual-tour p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: var(--text);
+        }
+
+        /* ---------- SERVICES ---------- */
+        .services {
+            background: var(--bg);
+        }
+
+        body.light .services {
+            background: var(--bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        body.light .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .service-card:hover:before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .service-icon i {
+            color: var(--secondary);
+            font-size: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        /* ---------- TESTIMONIALS (swiper) ---------- */
+        .testimonials {
+            background: var(--card);
+        }
+
+        body.light .testimonials {
+            background: var(--card);
+        }
+
+        .testimonial-card {
+            background: var(--bg);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        body.light .testimonial-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-card p {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--gold);
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--gold);
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: var(--card);
+        }
+
+        body.light .contact {
+            background: var(--card);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: var(--accent);
+        }
+
+        .contact-icon i {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+
+        .contact-details h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .contact-details p {
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: var(--bg);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        body.light .contact-form {
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+            background: var(--card);
+            color: var(--text);
+        }
+
+        body.light .form-control {
+            background: var(--card);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--bg);
+            box-shadow: 0 0 0 3px rgba(212, 184, 135, 0.2);
+        }
+
+        .form-control:invalid {
+            border-color: #e74c3c;
+        }
+
+        .form-control:valid {
+            border-color: #27ae60;
+        }
+
+        /* ---------- POPUP MODAL (new) ---------- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s;
+        }
+
+        body.light .popup-overlay {
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup-modal {
+            background: var(--card);
+            border: 1px solid var(--gold);
+            border-radius: var(--border-radius);
+            max-width: 450px;
+            width: 90%;
+            padding: 40px 30px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        body.light .popup-modal {
+            background: var(--card);
+        }
+
+        .popup-overlay.active .popup-modal {
+            transform: scale(1);
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--gold);
+            font-size: 28px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            line-height: 1;
+        }
+        .popup-close:hover {
+            transform: rotate(90deg) scale(1.2);
+        }
+        .popup-modal h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            text-align: center;
+        }
+        .popup-modal p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        .popup-modal .form-group {
+            margin-bottom: 20px;
+        }
+        .popup-modal .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ---------- WHATSAPP FLOAT ---------- */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 80px 0 30px;
+        }
+
+        body.light footer {
+            background: var(--secondary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo .logo-text h1 {
+            color: var(--primary);
+        }
+
+        .footer-logo p {
+            margin-top: 20px;
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .footer-links h4, .footer-projects h4, .footer-contact h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h4:after, .footer-projects h4:after, .footer-contact h4:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+            opacity: 1;
+        }
+
+        .footer-projects ul {
+            list-style: none;
+        }
+
+        .footer-projects li {
+            color: var(--text);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+
+        .footer-projects li:before {
+            content: '▸';
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 184, 135, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        body.light .social-links a {
+            background: rgba(212, 184, 135, 0.05);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* ---------- FADE-IN ANIMATION ---------- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 1200px) {
+            .hero h2 { font-size: 3.5rem; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .main-nav, .header-actions .phone-number, .header-actions .btn-outline {
+                display: none;
+            }
+            .mobile-menu-btn { display: flex; }
+            .hero h2 { font-size: 2.8rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.3rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .hero-cta { flex-direction: column; }
+            .btn-primary, .btn-outline { width: 100%; text-align: center; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .whatsapp-float { width: 60px; height: 60px; bottom: 20px; right: 20px; font-size: 30px; }
+        }
+
+        @media (max-width: 576px) {
+            :root { --header-height: 70px; }
+            .hero h2 { font-size: 2rem; }
+            .stat-number { font-size: 2.5rem; }
+            .virtual-tour h2 { font-size: 2.5rem; }
+            .contact-form { padding: 30px; }
+            .popup-modal { padding: 30px 20px; }
+        }
+
+        /* ---------- UTILS ---------- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float (updated number) -->
+    <a href="https://wa.me/919922113344" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header id="mainHeader" role="banner">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="Nirman Properties Home">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
+                        <rect x="5" y="5" width="50" height="50" rx="8" stroke="var(--gold)" stroke-width="2"/>
+                        <path d="M20 25 L30 15 L40 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M25 45 L25 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M35 45 L35 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="30" cy="30" r="4" fill="var(--gold)"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>NIRMAN PROPERTIES</h1>
+                    <span class="tagline">Luxury Real Estate Consultants</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- NO THEME TOGGLE BUTTON -->
+                <a href="tel:9922113344" class="phone-number">
+                    <i class="fas fa-phone"></i> +91 99221 13344
+                </a>
+
+                <a href="#contact" class="btn-outline">Schedule Visit</a>
+
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-nav-actions">
+                <a href="tel:9922113344" class="phone-number">
+                    <i class="fas fa-phone"></i> +91 99221 13344
+                </a>
+
+                <a href="#contact" class="btn-outline">Schedule Visit</a>
+
+                <!-- No theme toggle in mobile either -->
+                <button id="mobileThemeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section (heading now white) -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Luxury Apartment" loading="lazy">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 id="hero-heading">Curating Exceptional Living Experiences in Kalyan Dombivli</h2>
+            <p class="hero-subtitle">Discover luxury apartments, premium commercial spaces, and bespoke real estate solutions tailored to your aspirations. Your journey to an extraordinary lifestyle begins here.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">
+                    <i class="fas fa-building"></i> View Our Projects
+                </a>
+                <a href="https://wa.me/919922113344" class="btn-outline" style="border-color: var(--secondary); color: var(--secondary);">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" aria-labelledby="stats-heading">
+        <div class="container">
+            <h2 id="stats-heading" class="sr-only">Our Achievements</h2>
+            <div class="stats-container">
+                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-home"></i></div><div class="stat-number" data-count="500">0</div><div class="stat-text">Happy Families</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-handshake"></i></div><div class="stat-number" data-count="50">0</div><div class="stat-text">Projects Completed</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-number" data-count="15">0</div><div class="stat-text">Years Experience</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div><div class="stat-number" data-count="4">0</div><div class="stat-text">Upcoming Projects</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Why Choose Us) -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="about-heading">About Nirman Properties</h2>
+                <p>With over 15 years in the real estate industry, we specialize in luxury properties in Kalyan East, offering personalized consultancy and end-to-end support for your investment needs.</p>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <h3>Why Choose Us?</h3>
+                    <p>Our team of experts provides tailored solutions, from property selection to legal verification, ensuring a seamless experience. We focus on high-ROI opportunities in prime locations.</p>
+                    <p>Committed to excellence, transparency, and client satisfaction, Nirman Properties is RERA registered and trusted by hundreds of families.</p>
+                    <a href="#contact" class="btn-primary">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team at Nirman Properties office" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+            <div class="section-header"><h2 id="projects-heading">Featured Luxury Projects</h2><p>Discover our curated selection of premium residential projects in prime locations across Kalyan East</p></div>
+            <div class="projects-grid">
+                <!-- Sahara Season -->
+                <div class="project-card fade-in"><div class="project-badge">Under Construction</div><img src="https://housing-images.n7net.in/4f2250e8/f739c99f016dfd2287f86ef7ffd28ac4/v0/large/seasons_sahara_building_no_3-kalyan_east-mumbai-samarth_sai_builders_and_developers.jpeg" class="project-image" alt="Sahara Season" loading="lazy"><div class="project-content"><h3>Season Sahara</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Prime Location</div><p>Luxury apartments with premium amenities including swimming pool, gym, and landscaped gardens.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>900 - 1300 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2025 Ready</span></div></div><a href="https://wa.me/919922113344?text=Hi,%20I'm%20interested%20in%20Sahara%20Season%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
+                <!-- Davkhar Serino -->
+                <div class="project-card fade-in"><div class="project-badge">Pre-Booking Open</div><img src="https://davakharsereno.com/images/new/TOP-DOWN-0318_(1).jpg" class="project-image" alt="Davkhar Serino" loading="lazy"><div class="project-content"><h3>Davkhar Serino</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Near Metro</div><p>Modern smart homes with advanced security features and energy-efficient design near major transportation hubs.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>1, 2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>650 - 1200 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2026 Ready</span></div></div><a href="https://wa.me/919922113344?text=Hi,%20I'm%20interested%20in%20Davkhar%20Serino%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
+                <!-- Saket World -->
+                <div class="project-card fade-in"><div class="project-badge">Under Construction</div><img src="https://www.saketworld.in/server/php/files/property/84/saket-world-15.jpg" class="project-image" alt="Saket World" loading="lazy"><div class="project-content"><h3>Saket World</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Family Hub</div><p>Family-centric community with clubhouse, children's play area, and 24/7 security in a prime location.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>850 - 1400 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2025 Ready</span></div></div><a href="https://wa.me/919922113344?text=Hi,%20I'm%20interested%20in%20Saket%20World%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
+                <!-- JH Zojhwala -->
+                <div class="project-card fade-in"><div class="project-badge">Upcoming</div><img src="https://static.squareyards.com/resources/images/thane/project-image/jh-zojwala-regency-park-project-project-large-image1-1753.jpg?aio=w-0;h-550" class="project-image" alt="JH Zojhwala" loading="lazy"><div class="project-content"><h3>JH Zojwalla Regency Park</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Dombivli, High-Growth Area</div><p>High-growth investment opportunity with excellent connectivity to Mumbai and Thane. Premium commercial and residential spaces.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2, 3 & 4 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>1000 - 1800 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2027 Ready</span></div></div><a href="https://wa.me/919922113344?text=Hi,%20I'm%20interested%20in%20JH%20Zojhwala%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour" aria-labelledby="virtual-tour-heading">
+        <div class="container">
+            <div class="virtual-tour-content">
+                <h2 id="virtual-tour-heading">Experience Properties in 360°</h2>
+                <p>Take immersive virtual tours of our properties from the comfort of your home. Explore every corner before you visit.</p>
+                <a href="#contact" class="btn-primary"><i class="fas fa-vr-cardboard"></i> Schedule Virtual Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+        <div class="container">
+            <div class="section-header"><h2 id="services-heading">Our Premium Services</h2><p>Comprehensive real estate solutions tailored to your unique requirements</p></div>
+            <div class="services-grid">
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-search-dollar"></i></div><h3>Property Search & Selection</h3><p>Curated property shortlisting based on your preferences, budget, and lifestyle requirements.</p></div>
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Price Negotiation</h3><p>Expert negotiation to secure the best possible price and terms for your property transaction.</p></div>
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-balance-scale"></i></div><h3>Legal Verification</h3><p>Thorough legal due diligence including title verification, documentation, and compliance checks.</p></div>
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-home"></i></div><h3>NRI Services</h3><p>Complete assistance for NRIs including virtual tours, power of attorney, and remote coordination.</p></div>
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Investment Advisory</h3><p>Strategic guidance for property investment with focus on ROI, growth potential, and market trends.</p></div>
+                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-file-contract"></i></div><h3>End-to-End Support</h3><p>Complete transaction management from search to possession, including registration and loan processing.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <div class="section-header"><h2 id="testimonials-heading">What Our Clients Say</h2><p>Discover why families trust us for their dream homes</p></div>
+            <div class="swiper testimonials-swiper fade-in">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"Nirman Properties made finding our perfect 3BHK in Kalyan East effortless. Their negotiation skills saved us a fortune!"</blockquote><p>- Priya S., Happy Homeowner</p></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"Excellent legal verification and NRI support. We closed the deal remotely without any hassle. Highly recommended!"</blockquote><p>- Rajesh K., NRI Investor</p></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"From virtual tours to possession, their end-to-end service was seamless. Professional team with great insights."</blockquote><p>- Anita M., Family Client</p></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <div class="section-header"><h2 id="contact-heading">Get In Touch</h2><p>Schedule a consultation with our real estate experts <b>We Are Waiting For You</b></p></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-details"><h4>Call Us</h4><p><a href="tel:9922113344" style="color: var(--primary); text-decoration: none; font-weight: 600;">+91 99221 13344</a></p><p style="color: var(--text); opacity: 0.8; margin-top:5px;">Mon-Sat: 10 AM - 8 PM</p></div></div>
+                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-details"><h4>WhatsApp</h4><p><a href="https://wa.me/919922113344" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instant Response Available</a></p><p style="color: var(--text); opacity: 0.8; margin-top:5px;">Quick property details & appointments</p></div></div>
+                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-details"><h4>Visit Our Office</h4><p style="font-weight:600; color:var(--primary);">Kalyan East, Maharashtra</p><p style="color: var(--text); opacity:0.8; margin-top:5px;">By appointment only</p></div></div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3 style="margin-bottom:30px; font-size:1.8rem;">Request a Callback</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" class="form-control" required></div>
+                        <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" class="form-control" required></div>
+                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" class="form-control"></div>
+                        <div class="form-group"><label for="projectInterest">Project Interest</label><select id="projectInterest" class="form-control"><option value="">Select a project</option><option value="sahara">Sahara Season</option><option value="serino">Davkhar Serino</option><option value="saket">Saket World</option><option value="zhojhwala">JH Zojhwala Project</option><option value="other">Other Properties</option></select></div>
+                        <div class="form-group"><label for="message">Additional Requirements</label><textarea id="message" class="form-control" rows="4" placeholder="Tell us about your requirements..."></textarea></div>
+                        <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo"><a href="#" class="logo"><div class="logo-text"><h1>NIRMAN PROPERTIES</h1><span class="tagline">Luxury Real Estate Consultants</span></div></a><p>Your trusted partner for premium real estate in Kalyan East. We specialize in luxury apartments, premium commercial spaces, and bespoke property solutions with end-to-end consultation.</p><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/919922113344" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li><li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li><li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+                <div class="footer-projects"><h4>Our Projects</h4><ul><li>Sahara Season</li><li>Davkhar Serino</li><li>Saket World</li><li>JH Zojhwala Project</li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><p style="margin-bottom:15px; color:var(--text); opacity:0.8;"><i class="fas fa-phone" style="margin-right:10px;"></i><a href="tel:9922113344" style="color:var(--text); text-decoration:none;">+91 99221 13344</a></p><p style="color:var(--text); opacity:0.8;"><i class="fas fa-map-marker-alt" style="margin-right:10px;"></i>Kalyan East, Maharashtra</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 Nirman Properties. All Rights Reserved. | RERA Registered | <a href="tel:9922113344" style="color:var(--gold); text-decoration:none;">Call: +91 99221 13344</a></p></div>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL (appears on load) -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <h3>Get Exclusive Updates</h3>
+            <p>Fill the form to receive latest project details & offers</p>
+            <form id="popupForm">
+                <div class="form-group">
+                    <label for="popupName">Full Name *</label>
+                    <input type="text" id="popupName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupPhone">Phone Number *</label>
+                    <input type="tel" id="popupPhone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupEmail">Email Address</label>
+                    <input type="email" id="popupEmail" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="popupProject">Project Interest (optional)</label>
+                    <select id="popupProject" class="form-control">
+                        <option value="">Select</option>
+                        <option value="Sahara Season">Sahara Season</option>
+                        <option value="Davkhar Serino">Davkhar Serino</option>
+                        <option value="Saket World">Saket World</option>
+                        <option value="JH Zojhwala">JH Zojhwala</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+        const icon = themeToggle ? themeToggle.querySelector('i') : null;
+        const mobileIcon = mobileThemeToggle ? mobileThemeToggle.querySelector('i') : null;
+
+        if (currentTheme === 'light') {
+            body.classList.add('light');
+            if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+            if (mobileIcon) mobileIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        const toggleTheme = () => {
+            body.classList.toggle('light');
+            const isLight = body.classList.contains('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            if (icon) {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+            }
+            if (mobileIcon) {
+                mobileIcon.classList.toggle('fa-moon');
+                mobileIcon.classList.toggle('fa-sun');
+            }
+        };
+
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isActive);
+            mobileNav.setAttribute('aria-hidden', !isActive);
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileNav.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 50); }
+        window.addEventListener('scroll', updateHeader); updateHeader();
+
+        // Counters
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        const startCounter = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => startCounter(counter), 10);
+            } else counter.innerText = target;
+        };
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { startCounter(entry.target); counterObserver.unobserve(entry.target); }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => appearOnScroll.observe(el));
+
+        // Swiper
+        new Swiper('.testimonials-swiper', {
+            loop: true, autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 768: { slidesPerView: 1 }, 992: { slidesPerView: 2 } }
+        });
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const project = document.getElementById('projectInterest').value;
+            const message = document.getElementById('message').value;
+            let whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A`;
+            if(email) whatsappMessage += `*Email:* ${email}%0A`;
+            if(project) whatsappMessage += `*Project Interest:* ${project}%0A`;
+            if(message) whatsappMessage += `*Message:* ${message}%0A`;
+            window.open(`https://wa.me/919922113344?text=${whatsappMessage}`, '_blank');
+            this.reset();
+            alert('Thank you! You will be redirected to WhatsApp.');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href')==='#') return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+
+        // POPUP LOGIC
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+        const popupForm = document.getElementById('popupForm');
+
+        // Show popup after 1.5 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                popupOverlay.classList.add('active');
+            }, 1500);
+        });
+
+        // Close popup
+        popupClose.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+        });
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) popupOverlay.classList.remove('active');
+        });
+
+        // Popup form submission
+        popupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('popupName').value;
+            const phone = document.getElementById('popupPhone').value;
+            const email = document.getElementById('popupEmail').value;
+            const project = document.getElementById('popupProject').value;
+            let msg = `*New Inquiry from Popup*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A`;
+            if(email) msg += `*Email:* ${email}%0A`;
+            if(project) msg += `*Project:* ${project}%0A`;
+            window.open(`https://wa.me/919922113344?text=${msg}`, '_blank');
+            popupOverlay.classList.remove('active');
+            popupForm.reset();
+        });
+    </script>
+</body>
+</html>
