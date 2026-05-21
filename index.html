@@ -2,1871 +2,2090 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Favicon for all browsers -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nirman Properties | Premium Real Estate Kalyan East</title>
-    <meta name="description" content="Discover luxury apartments and premium real estate solutions in Kalyan East. Expert consultation for your dream home with Nirman Properties.">
-    <meta name="keywords" content="real estate Kalyan East, luxury apartments, property consultants Mumbai, Nirman Properties">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Nirman Properties | Premium Real Estate">
-    <meta property="og:description" content="Curating exceptional living experiences in Kalyan Dombivli. Explore premium projects and services.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80">
-    <meta property="og:url" content="https://nirmanproperties.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <title>RK Enterprises - Billing System | Powered by Nirman Group</title>
     <style>
-        /* ---------- RESET & VARIABLES (DARK MODE ONLY) ---------- */
+        :root {
+            --primary: #1a237e;
+            --primary-light: #283593;
+            --accent: #ff6d00;
+            --success: #2e7d32;
+            --danger: #c62828;
+            --warning: #f9a825;
+            --bg: #f0f2f5;
+            --card: #ffffff;
+            --text: #212121;
+            --text-light: #616161;
+            --border: #e0e0e0;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            /* Permanent dark theme colors (no light mode) */
-            --primary: #F5F3EF;        /* primary text / headings (light) */
-            --secondary: #1E1E1E;       /* background for cards, footer */
-            --accent: #A8B98A;           /* soft green accent */
-            --terracotta: #D46A4C;       /* warm terracotta */
-            --gold: #D4B887;             /* warm gold */
-            --bg: #121212;                /* main background */
-            --text: #F5F3EF;              /* body text */
-            --card: #1E1E1E;               /* card background */
-            --border: #333333;             /* borders */
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
-            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --border-radius: 12px;
-            --header-height: 80px;
-            --gold-rgb: 212, 184, 135;
-            --secondary-rgb: 30, 30, 30;
-        }
-
-        body.light {
-            --primary: #1E1E1E;        /* primary text / headings (dark) */
-            --secondary: #F5F3EF;       /* background for cards, footer */
-            --accent: #A8B98A;           /* soft green accent */
-            --terracotta: #D46A4C;       /* warm terracotta */
-            --gold: #D4B887;             /* warm gold */
-            --bg: #F5F3EF;                /* main background */
-            --text: #1E1E1E;              /* body text */
-            --card: #FFFFFF;               /* card background */
-            --border: #E0E0E0;             /* borders */
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.1);
-            --gold-rgb: 212, 184, 135;
-            --secondary-rgb: 245, 243, 239;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            font-family: 'Georgia', 'Times New Roman', 'Segoe UI', serif;
+            background: var(--bg);
             color: var(--text);
-            background-color: var(--bg);
-            overflow-x: hidden;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Cormorant Garamond', serif;
+        /* ========== LOGIN PAGE ========== */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1b4a 0%, #1a237e 40%, #283593 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .login-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 48px 42px;
+            width: 430px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            animation: slideUp 0.5s ease;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .login-logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .login-logo .icon {
+            width: 70px;
+            height: 70px;
+            background: #1a237e;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+        }
+        .login-logo h2 {
+            font-size: 22px;
+            color: #1a237e;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+        }
+        .login-logo p {
+            font-size: 13px;
+            color: #757575;
+            margin-top: 4px;
+        }
+        .login-logo .tagline {
+            font-size: 11px;
+            color: #ff6d00;
             font-weight: 600;
-            color: var(--primary);
-            line-height: 1.2;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+            text-transform: uppercase;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .form-group {
+            margin-bottom: 20px;
         }
-
-        section {
-            padding: 100px 0;
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #424242;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
-
-        /* ---------- ENHANCED HEADER (permanent dark) ---------- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .form-group input {
             width: 100%;
-            height: var(--header-height);
-            z-index: 1000;
-            background-color: rgba(30, 30, 30, 0.98);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(212, 184, 135, 0.15);
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 15px;
             transition: var(--transition);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            background: #fafafa;
+            outline: none;
+            font-family: 'Georgia', serif;
+        }
+        .form-group input:focus {
+            border-color: #1a237e;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.06);
+            background: #fff;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: #1a237e;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+        }
+        .btn-login:hover {
+            background: #283593;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.3);
+        }
+        .login-error {
+            color: #c62828;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 12px;
+            display: none;
+            font-weight: 600;
+        }
+        .login-footer {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 11px;
+            color: #9e9e9e;
+        }
+        .login-footer span {
+            color: #1a237e;
+            font-weight: 600;
         }
 
-        body.light header {
-            background-color: rgba(255, 255, 255, 0.98);
-            border-bottom: 1px solid rgba(212, 184, 135, 0.15);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        /* ========== MAIN APP ========== */
+        .app-container {
+            display: none;
+            min-height: 100vh;
         }
-
-        .header-container {
-            height: 100%;
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 255px;
+            height: 100vh;
+            background: #1a1a2e;
+            color: #fff;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .sidebar-header {
+            padding: 26px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+        .sidebar-header .s-icon {
+            width: 46px;
+            height: 46px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+        .sidebar-header h3 {
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Georgia', serif;
+        }
+        .sidebar-header small {
+            font-size: 10px;
+            opacity: 0.6;
+            display: block;
+        }
+        .sidebar-header .tagline-sm {
+            font-size: 9px;
+            color: #ff6d00;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+        .sidebar-nav {
+            flex: 1;
+            padding: 10px 0;
+            overflow-y: auto;
+        }
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+            margin: 2px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+        .sidebar-nav a .nav-icon {
+            font-size: 16px;
+            width: 22px;
+            text-align: center;
+        }
+        .sidebar-footer {
+            padding: 14px 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 9px;
+            opacity: 0.5;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .sidebar-footer .powered-by {
+            color: #ff6d00;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .main-content {
+            margin-left: 255px;
+            padding: 26px 30px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.35s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .top-bar h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a2e;
+            font-family: 'Georgia', serif;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.3px;
+            font-family: 'Georgia', serif;
+        }
+        .btn-primary {
+            background: #1a237e;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #283593;
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            background: #fff;
+            color: #1a237e;
+            border: 2px solid #1a237e;
+        }
+        .btn-outline:hover {
+            background: #f5f5f5;
+        }
+        .btn-danger {
+            background: #c62828;
+            color: #fff;
+        }
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 11px;
+            border-radius: 6px;
+        }
+        .btn-success {
+            background: #2e7d32;
+            color: #fff;
+        }
+        .btn-warning {
+            background: #f9a825;
+            color: #000;
         }
 
-        .logo {
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+        .stat-card {
+            background: var(--card);
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: var(--shadow);
             display: flex;
             align-items: center;
-            text-decoration: none;
-            gap: 15px;
-            z-index: 1001;
+            gap: 14px;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
         }
-
-        .logo-icon {
-            position: relative;
-            width: 50px;
-            height: 50px;
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card.blue {
+            border-left-color: #1a237e;
+        }
+        .stat-card.green {
+            border-left-color: #2e7d32;
+        }
+        .stat-card.orange {
+            border-left-color: #ff6d00;
+        }
+        .stat-card.purple {
+            border-left-color: #6a1b9a;
+        }
+        .stat-card.teal {
+            border-left-color: #00695c;
+        }
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
         }
-
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
+        .stat-card.blue .stat-icon {
+            background: #e8eaf6;
+            color: #1a237e;
         }
-
-        .logo:hover .logo-icon svg {
-            transform: scale(1.1) rotate(5deg);
+        .stat-card.green .stat-icon {
+            background: #e8f5e9;
+            color: #2e7d32;
         }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
+        .stat-card.orange .stat-icon {
+            background: #fff3e0;
+            color: #ff6d00;
         }
-
-        .logo-text h1 {
-            font-size: 24px;
+        .stat-card.purple .stat-icon {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+        .stat-card.teal .stat-icon {
+            background: #e0f2f1;
+            color: #00695c;
+        }
+        .stat-info h3 {
+            font-size: 26px;
             font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 0.5px;
+        }
+        .stat-info p {
+            font-size: 12px;
+            color: var(--text-light);
             margin: 0;
         }
-
-        .logo-text .tagline {
-            font-size: 10px;
-            color: var(--gold);
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-            opacity: 0.9;
+        .card {
+            background: var(--card);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
         }
-
-        .main-nav {
+        .card-header {
+            padding: 16px 22px;
+            border-bottom: 1px solid var(--border);
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-            margin: 0;
-            padding: 0;
+        .card-header h3 {
+            font-size: 17px;
+            font-weight: 600;
+            font-family: 'Georgia', serif;
         }
-
-        .main-nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-            position: relative;
-            padding: 8px 0;
-            transition: var(--transition);
-            opacity: 0.9;
+        .card-body {
+            padding: 20px 22px;
+            overflow-x: auto;
         }
-
-        .main-nav a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-
-        .main-nav a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-            border-radius: 1px;
-        }
-
-        .main-nav a:hover:after {
+        table {
             width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
         }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .phone-number {
-            color: var(--gold);
+        table th {
+            background: #f5f5f5;
+            padding: 12px 14px;
+            text-align: left;
             font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
+            color: #424242;
+            border-bottom: 2px solid #ddd;
+            white-space: nowrap;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #eee;
+            color: #424242;
+        }
+        table tbody tr:hover {
+            background: #fafafa;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .badge-paid {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .badge-pending {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .badge-overdue {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .badge-partial {
+            background: #e3f2fd;
+            color: #0277bd;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .search-box input,
+        .search-box select {
+            padding: 10px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            transition: var(--transition);
+            min-width: 180px;
+            font-family: 'Georgia', serif;
+        }
+        .search-box input:focus,
+        .search-box select:focus {
+            border-color: #1a237e;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .form-row-3 {
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        }
+        .form-group-app label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #424242;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-group-app input,
+        .form-group-app select,
+        .form-group-app textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: var(--transition);
+            background: #fafafa;
+            font-family: 'Georgia', serif;
+        }
+        .form-group-app input:focus,
+        .form-group-app select:focus,
+        .form-group-app textarea:focus {
+            border-color: #1a237e;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.05);
+            background: #fff;
+        }
+        .form-group-app textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        .form-group-app input[readonly] {
+            background: #f5f5f5;
+            color: #555;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 24px 0 14px 0;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #e8e8e8;
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            border-radius: 30px;
-            background: rgba(212, 184, 135, 0.1);
-            transition: var(--transition);
+            font-family: 'Georgia', serif;
         }
-
-        body.light .phone-number {
-            background: rgba(212, 184, 135, 0.05);
-        }
-
-        .phone-number:hover {
-            background: rgba(212, 184, 135, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            padding: 12px 28px;
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 184, 135, 0.3);
-        }
-
-        /* Theme Toggle Button */
-        .theme-toggle {
-            background: none;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 1001;
-            position: relative;
-            color: var(--gold);
-            font-size: 18px;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(212, 184, 135, 0.1);
-            transform: rotate(180deg);
-        }
-
-        body.light .theme-toggle {
-            color: var(--gold);
-        }
-
-        body.light .theme-toggle:hover {
-            background: rgba(212, 184, 135, 0.05);
-        }
-
-        /* Mobile menu button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 1001;
-            position: relative;
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(212, 184, 135, 0.1);
-        }
-
-        body.light .mobile-menu-btn:hover {
-            background: rgba(212, 184, 135, 0.05);
-        }
-
-        .mobile-menu-btn .bar {
-            width: 24px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 2px;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .mobile-menu-btn .bar:before,
-        .mobile-menu-btn .bar:after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn .bar:before {
-            transform: translateY(-8px);
-        }
-
-        .mobile-menu-btn .bar:after {
-            transform: translateY(8px);
-        }
-
-        .mobile-menu-btn.active .bar {
-            background: transparent;
-        }
-
-        .mobile-menu-btn.active .bar:before {
-            transform: rotate(45deg);
-        }
-
-        .mobile-menu-btn.active .bar:after {
-            transform: rotate(-45deg);
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: var(--header-height);
-            left: 0;
-            width: 100%;
-            height: calc(100vh - var(--header-height));
-            background: var(--secondary);
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-
-        body.light .mobile-nav {
-            background: var(--secondary);
-        }
-
-        .mobile-nav.active {
-            transform: translateX(0);
-        }
-
-        .mobile-nav ul {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .mobile-nav li {
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateX(20px);
-        }
-
-        .mobile-nav.active li {
-            animation: slideIn 0.5s forwards;
-        }
-
-        .mobile-nav li:nth-child(1) { animation-delay: 0.1s; }
-        .mobile-nav li:nth-child(2) { animation-delay: 0.2s; }
-        .mobile-nav li:nth-child(3) { animation-delay: 0.3s; }
-        .mobile-nav li:nth-child(4) { animation-delay: 0.4s; }
-        .mobile-nav li:nth-child(5) { animation-delay: 0.5s; }
-        .mobile-nav li:nth-child(6) { animation-delay: 0.6s; }
-        @keyframes slideIn {
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .mobile-nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 500;
-            display: block;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 184, 135, 0.1);
-            transition: var(--transition);
-        }
-
-        .mobile-nav a:hover {
-            color: var(--gold);
-            padding-left: 10px;
-        }
-
-        .mobile-nav-actions {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .mobile-nav-actions .phone-number {
-            justify-content: center;
-            font-size: 18px;
-            padding: 15px;
-        }
-
-        .mobile-nav-actions .btn-outline {
-            text-align: center;
-            padding: 15px;
-            font-size: 16px;
-        }
-
-        header.scrolled {
-            height: 70px;
-            background-color: rgba(30, 30, 30, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        body.light header.scrolled {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ---------- HERO ---------- */
-        .hero {
-            height: 100vh;
-            min-height: 700px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            color: var(--secondary);
-            margin-top: var(--header-height);
-            padding: 0;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.3);
-            transition: filter 0.5s ease;
-        }
-
-        body.light .hero-bg img {
-            filter: brightness(0.6);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.6));
-            z-index: -1;
-        }
-
-        body.light .hero-overlay {
-            background: linear-gradient(45deg, rgba(245, 243, 239, 0.8), rgba(245, 243, 239, 0.5));
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h2 {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            color: var(--primary);
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 600px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            color: rgba(245, 243, 239, 0.9);
-        }
-
-        body.light .hero-subtitle {
-            color: rgba(30, 30, 30, 0.9);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            padding: 18px 40px;
-            background: var(--gold);
-            color: var(--secondary);
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
+        .add-row-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ---------- STATS with animation ---------- */
-        .stats {
-            padding: 80px 0;
-            background: var(--card);
-        }
-
-        body.light .stats {
-            background: var(--card);
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 40px 30px;
-            background: var(--bg);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            animation: floatGlow 4s infinite ease-in-out;
-        }
-
-        body.light .stat-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
-        }
-
-        @keyframes floatGlow {
-            0% { box-shadow: 0 5px 20px rgba(212, 184, 135, 0.1); }
-            50% { box-shadow: 0 15px 30px rgba(212, 184, 135, 0.3); transform: translateY(-5px); }
-            100% { box-shadow: 0 5px 20px rgba(212, 184, 135, 0.1); }
-        }
-
-        .stat-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover:before {
-            width: 100%;
-            opacity: 0.1;
-        }
-
-        .stat-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-        }
-
-        .stat-icon i {
-            color: var(--secondary);
-            font-size: 28px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 10px;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .stat-text {
-            color: var(--text);
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* ---------- ABOUT (why choose us) improved mobile ---------- */
-        .about {
-            background: var(--bg);
-        }
-
-        body.light .about {
-            background: var(--bg);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: var(--text);
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            transition: transform 0.7s ease, box-shadow 0.5s;
-        }
-
-        .about-image img:hover {
-            transform: scale(1.02) rotate(0.5deg);
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .about-image img {
-                height: auto;
-                max-height: 350px;
-                width: 100%;
-                object-fit: cover;
-            }
-            .about-text {
-                padding: 0 10px;
-            }
-        }
-
-        /* ---------- PROJECTS ---------- */
-        .featured-projects {
-            background: var(--bg);
-        }
-
-        body.light .featured-projects {
-            background: var(--bg);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-header h2 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 2px;
-            background: var(--terracotta);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-header p {
-            color: var(--text);
-            opacity: 0.8;
-            max-width: 700px;
-            margin: 30px auto 0;
-            font-size: 1.1rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background: var(--card);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-            position: relative;
-            animation: cardPulse 5s infinite;
-        }
-
-        body.light .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-        }
-
-        @keyframes cardPulse {
-            0% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
-            50% { box-shadow: 0 20px 35px -5px rgba(212,184,135,0.2); }
-            100% { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 8s ease;
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.1);
-        }
-
-        .project-content {
-            padding: 30px;
-        }
-
-        .project-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--terracotta);
-            color: var(--secondary);
-            padding: 8px 20px;
-            border-radius: 20px;
+            gap: 5px;
+            cursor: pointer;
+            color: #1a237e;
+            font-weight: 600;
             font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            z-index: 1;
-        }
-
-        .project-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .project-location {
-            color: var(--gold);
-            font-size: 1rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .project-features {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-            padding: 20px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature i {
-            color: var(--gold);
-            font-size: 20px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .feature span {
-            font-size: 12px;
-            color: var(--text);
-            opacity: 0.8;
-        }
-
-        /* ---------- VIRTUAL TOUR ---------- */
-        .virtual-tour {
-            background: linear-gradient(45deg, var(--secondary), var(--card));
-            position: relative;
-            overflow: hidden;
-        }
-
-        body.light .virtual-tour {
-            background: linear-gradient(45deg, var(--secondary), var(--card));
-        }
-
-        .virtual-tour:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://super.homelane.com/paid_pages/v3/interiors/3.webp') center/cover;
-            opacity: 0.6;
-            animation: slowZoom 20s infinite alternate;
-        }
-
-        @keyframes slowZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-
-        .virtual-tour-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .virtual-tour h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .virtual-tour p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            color: var(--text);
-        }
-
-        /* ---------- SERVICES ---------- */
-        .services {
-            background: var(--bg);
-        }
-
-        body.light .services {
-            background: var(--bg);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--card);
-            padding: 50px 40px;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        body.light .service-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
-        }
-
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent);
-            transition: var(--transition);
-        }
-
-        .service-card:hover:before {
-            width: 100%;
-            opacity: 0.1;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            transition: transform 0.5s;
-        }
-
-        .service-card:hover .service-icon {
-            transform: rotate(360deg) scale(1.1);
-        }
-
-        .service-icon i {
-            color: var(--secondary);
-            font-size: 28px;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--text);
-            opacity: 0.9;
-        }
-
-        /* ---------- TESTIMONIALS (swiper) ---------- */
-        .testimonials {
-            background: var(--card);
-        }
-
-        body.light .testimonials {
-            background: var(--card);
-        }
-
-        .testimonial-card {
-            background: var(--bg);
-            padding: 40px 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        body.light .testimonial-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .testimonial-card blockquote {
-            font-style: italic;
-            color: var(--text);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial-card p {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .swiper-pagination-bullet {
-            background: var(--gold);
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--gold);
-        }
-
-        /* ---------- CONTACT ---------- */
-        .contact {
-            background: var(--card);
-        }
-
-        body.light .contact {
-            background: var(--card);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover .contact-icon {
-            transform: scale(1.1) rotate(10deg);
-            background: var(--accent);
-        }
-
-        .contact-icon i {
-            color: var(--secondary);
-            font-size: 24px;
-        }
-
-        .contact-details h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .contact-details p {
-            color: var(--text);
-            opacity: 0.9;
-        }
-
-        .contact-form {
-            background: var(--bg);
-            padding: 50px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-        }
-
-        body.light .contact-form {
-            background: var(--bg);
-            border: 1px solid var(--border);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 16px 20px;
-            border: 1px solid var(--border);
+            margin-top: 8px;
+            padding: 8px 14px;
             border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            border: 2px dashed #c5cae9;
+            background: transparent;
+        }
+        .add-row-btn:hover {
+            background: #f0f0f5;
+            border-color: #1a237e;
+        }
+        .work-row,
+        .charge-row {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            border: 1px solid #e8e8e8;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+            gap: 10px;
+            align-items: end;
+            transition: var(--transition);
+        }
+        .charge-row {
+            grid-template-columns: 2fr 1fr 1fr 1fr 40px;
+        }
+        .work-row:hover,
+        .charge-row:hover {
+            border-color: #c5cae9;
+        }
+        .remove-row {
+            width: 32px;
+            height: 32px;
+            background: #ffebee;
+            color: #c62828;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
             font-size: 16px;
             transition: var(--transition);
-            background: var(--card);
-            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .remove-row:hover {
+            background: #c62828;
+            color: #fff;
+        }
+        .totals-box {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin-top: 20px;
+            border: 1px solid #e8e8e8;
+        }
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .totals-row.total {
+            font-size: 19px;
+            font-weight: 700;
+            color: #1a237e;
+            border-top: 2px solid #ddd;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+        .amount-in-words {
+            font-size: 12px;
+            color: #616161;
+            font-style: italic;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
         }
 
-        body.light .form-control {
-            background: var(--card);
+        /* Invoice Preview - Final Professional Format */
+        .invoice-preview {
+            background: #fff;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 45px;
+            border: 2px solid #1a237e;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .inv-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-size: 90px;
+            color: rgba(26, 35, 126, 0.025);
+            font-weight: 900;
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: 8px;
+            font-family: 'Georgia', serif;
+            z-index: 0;
+        }
+        .inv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .inv-logo-box {
+            width: 72px;
+            height: 72px;
+            border: 3px solid #1a237e;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #1a237e;
+            background: #fafbff;
+            flex-shrink: 0;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+        .inv-company-info h2 {
+            font-size: 24px;
+            color: #1a237e;
+            font-weight: 800;
+            margin: 0 0 2px 0;
+            letter-spacing: 0.5px;
+            font-family: 'Georgia', serif;
+        }
+        .inv-company-info .tagline-inv {
+            font-size: 10px;
+            color: #ff6d00;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .inv-company-info p {
+            font-size: 11px;
+            color: #444;
+            margin: 1px 0;
+            line-height: 1.5;
+        }
+        .inv-header-right {
+            text-align: right;
+            min-width: 190px;
+        }
+        .inv-header-right h1 {
+            font-size: 28px;
+            color: #1a237e;
+            letter-spacing: 3px;
+            font-weight: 900;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+        }
+        .inv-header-right p {
+            font-size: 11px;
+            margin: 2px 0;
+            font-weight: 500;
+        }
+        .inv-header-right .inv-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a237e;
+        }
+        .inv-date-range {
+            background: #fafbff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 9px 14px;
+            margin-bottom: 16px;
+            font-size: 11px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-date-range span {
+            font-weight: 700;
+            color: #1a237e;
+        }
+        .inv-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 11px;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-details .bill-to {
+            flex: 1;
+        }
+        .inv-details .bill-to h4 {
+            font-size: 12px;
+            color: #1a237e;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+        }
+        .inv-details strong {
+            color: #222;
+        }
+        .inv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            border: 1px solid #bbb;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-table th {
+            background: #1a237e;
+            color: #fff;
+            padding: 9px 7px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #1a237e;
+            text-align: center;
+            font-family: 'Georgia', serif;
+        }
+        .inv-table td {
+            padding: 8px 7px;
+            border: 1px solid #ccc;
+            font-size: 11px;
+            text-align: center;
+        }
+        .inv-table td.text-left {
+            text-align: left;
+        }
+        .inv-table td.text-right {
+            text-align: right;
+        }
+        .inv-table tbody tr:nth-child(even) {
+            background: #fafbff;
+        }
+        .inv-totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-totals {
+            width: 330px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .inv-totals table {
+            width: 100%;
+        }
+        .inv-totals td {
+            padding: 7px 12px;
+            font-size: 11px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 500;
+        }
+        .inv-totals td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .inv-totals .grand-total {
+            font-size: 16px;
+            font-weight: 800;
+            color: #1a237e;
+            background: #e8eaf6;
+            border-bottom: none;
+            font-family: 'Georgia', serif;
+        }
+        .inv-amount-words {
+            margin-top: 10px;
+            font-size: 11px;
+            font-style: italic;
+            color: #444;
+            padding: 7px 0;
+            border-bottom: 1px dashed #ccc;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-footer {
+            margin-top: 18px;
+            font-size: 10px;
+            color: #555;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-signature-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 30px;
+            padding-top: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-signature-section .bank-details {
+            font-size: 10px;
+            color: #555;
+        }
+        .inv-signature-box {
+            text-align: center;
+            min-width: 180px;
+        }
+        .inv-signature-box .sign-line {
+            border-bottom: 1px solid #333;
+            width: 160px;
+            margin: 0 auto 4px auto;
+            padding-top: 28px;
+        }
+        .inv-signature-box p {
+            font-size: 10px;
+            font-weight: 600;
+            margin: 1px 0;
+            color: #333;
+        }
+        .inv-powered-by {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 9px;
+            color: #999;
+            letter-spacing: 1px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+            position: relative;
+            z-index: 1;
+        }
+        .inv-powered-by span {
+            color: #1a237e;
+            font-weight: 700;
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: var(--bg);
-            box-shadow: 0 0 0 3px rgba(212, 184, 135, 0.2);
+        @media print {
+            body {
+                background: #fff;
+            }
+            .sidebar,
+            .top-bar,
+            .btn,
+            .no-print {
+                display: none !important;
+            }
+            .main-content {
+                margin-left: 0 !important;
+                padding: 0 !important;
+            }
+            .invoice-preview {
+                box-shadow: none;
+                border: 2px solid #000;
+                padding: 12px;
+                max-width: 100%;
+            }
+            .page {
+                display: block !important;
+            }
+            #page-dashboard,
+            #page-customers,
+            #page-machines,
+            #page-invoices,
+            #page-ledger,
+            #page-new-invoice {
+                display: none !important;
+            }
+            #page-preview {
+                display: block !important;
+            }
+            @page {
+                margin: 6mm;
+                size: A4;
+            }
         }
-
-        /* ---------- POPUP MODAL ---------- */
-        .popup-overlay {
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .modal-overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 200;
             justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s;
+            align-items: center;
         }
-
-        body.light .popup-overlay {
-            background-color: rgba(0,0,0,0.4);
+        .modal-overlay.show {
+            display: flex;
         }
-
-        .popup-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .popup-modal {
-            background: var(--card);
-            border: 1px solid var(--gold);
-            border-radius: var(--border-radius);
-            max-width: 450px;
+        .modal {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
             width: 90%;
-            padding: 40px 30px;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            transform: scale(0.9);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-width: 580px;
+            max-height: 82vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
-
-        body.light .popup-modal {
-            background: var(--card);
+        .modal h3 {
+            margin-bottom: 18px;
+            color: #1a1a2e;
+            font-size: 19px;
+            font-family: 'Georgia', serif;
         }
-
-        .popup-overlay.active .popup-modal {
-            transform: scale(1);
-        }
-        .popup-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: transparent;
+        .close-modal {
+            float: right;
+            background: none;
             border: none;
-            color: var(--gold);
-            font-size: 28px;
+            font-size: 26px;
             cursor: pointer;
-            transition: transform 0.3s;
+            color: #757575;
             line-height: 1;
         }
-        .popup-close:hover {
-            transform: rotate(90deg) scale(1.2);
+        .close-modal:hover {
+            color: #c62828;
         }
-        .popup-modal h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
+        .empty-state {
             text-align: center;
+            padding: 40px;
+            color: #9e9e9e;
         }
-        .popup-modal p {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--text);
-            opacity: 0.9;
-        }
-        .popup-modal .form-group {
-            margin-bottom: 20px;
-        }
-        .popup-modal .btn-primary {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* ---------- WHATSAPP FLOAT ---------- */
-        .whatsapp-float {
-            position: fixed;
-            width: 70px;
-            height: 70px;
-            bottom: 40px;
-            right: 40px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 36px;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.15) rotate(5deg);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* ---------- FOOTER ---------- */
-        footer {
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 80px 0 30px;
-        }
-
-        body.light footer {
-            background: var(--secondary);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo .logo-text h1 {
-            color: var(--primary);
-        }
-
-        .footer-logo p {
-            margin-top: 20px;
-            color: var(--text);
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        .footer-links h4, .footer-projects h4, .footer-contact h4 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .footer-links h4:after, .footer-projects h4:after, .footer-contact h4:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: var(--text);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.8;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-            padding-left: 5px;
-            opacity: 1;
-        }
-
-        .footer-projects ul {
-            list-style: none;
-        }
-
-        .footer-projects li {
-            color: var(--text);
+        .empty-state .icon {
+            font-size: 48px;
             margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.8;
         }
-
-        .footer-projects li:before {
-            content: '▸';
-            color: var(--accent);
-            font-size: 12px;
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 13px 24px;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            z-index: 400;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.3px;
+            font-family: 'Georgia', serif;
         }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 184, 135, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        body.light .social-links a {
-            background: rgba(212, 184, 135, 0.05);
-        }
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--secondary);
-            transform: translateY(-3px) scale(1.1);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            color: var(--text);
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        /* ---------- FADE-IN ANIMATION ---------- */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 1200px) {
-            .hero h2 { font-size: 3.5rem; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 992px) {
-            .main-nav, .header-actions .phone-number, .header-actions .btn-outline {
-                display: none;
+        @keyframes slideIn {
+            from {
+                transform: translateX(120%);
+                opacity: 0;
             }
-            .mobile-menu-btn { display: flex; }
-            .hero h2 { font-size: 2.8rem; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .section-header h2 { font-size: 2.5rem; }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 2.3rem; }
-            .hero-subtitle { font-size: 1.1rem; }
-            .hero-cta { flex-direction: column; }
-            .btn-primary, .btn-outline { width: 100%; text-align: center; }
-            .stats-container { grid-template-columns: repeat(2, 1fr); }
-            .services-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .whatsapp-float { width: 60px; height: 60px; bottom: 20px; right: 20px; font-size: 30px; }
+        .toast-success {
+            background: #2e7d32;
         }
-
-        @media (max-width: 576px) {
-            :root { --header-height: 70px; }
-            .hero h2 { font-size: 2rem; }
-            .stat-number { font-size: 2.5rem; }
-            .virtual-tour h2 { font-size: 2.5rem; }
-            .contact-form { padding: 30px; }
-            .popup-modal { padding: 30px 20px; }
+        .toast-error {
+            background: #c62828;
         }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            border: 0;
+        .status-select {
+            cursor: pointer;
         }
-
-        a:focus, button:focus, input:focus, select:focus, textarea:focus {
-            outline: 2px solid var(--gold);
-            outline-offset: 2px;
+        .ledger-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .ledger-card {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .ledger-card h4 {
+            font-size: 20px;
+            color: #1a237e;
+            font-family: 'Georgia', serif;
+        }
+        .ledger-card p {
+            font-size: 10px;
+            color: #757575;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Float - Updated to 7977434470 -->
-    <a href="https://wa.me/917977434470" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <!-- Header -->
-    <header id="mainHeader" role="banner">
-        <div class="container header-container">
-            <a href="#" class="logo" aria-label="Nirman Properties Home">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
-                        <rect x="5" y="5" width="50" height="50" rx="8" stroke="var(--gold)" stroke-width="2"/>
-                        <path d="M20 25 L30 15 L40 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M25 45 L25 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M35 45 L35 25" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="30" cy="30" r="4" fill="var(--gold)"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <h1>NIRMAN PROPERTIES</h1>
-                    <span class="tagline"> </span>
-                </div>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="main-nav" role="navigation" aria-label="Main navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <!-- Phone number updated to 7977434470 -->
-                <a href="tel:7977434470" class="phone-number">
-                    <i class="fas fa-phone"></i> +91 79774 34470
-                </a>
-
-                <a href="#contact" class="btn-outline">Schedule Visit</a>
-
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="bar"></span>
-                </button>
+    <!-- ==================== LOGIN PAGE ==================== -->
+    <div class="login-container" id="loginPage">
+        <div class="login-box">
+            <div class="login-logo">
+                <div class="icon">RK</div>
+                <h2>RK ENTERPRISES</h2>
+                <p>Earthmover Billing System</p>
+                <div class="tagline">Moving Earth, Building Relationships</div>
             </div>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <div class="mobile-nav-actions">
-                <!-- Mobile phone number updated to 7977434470 -->
-                <a href="tel:7977434470" class="phone-number">
-                    <i class="fas fa-phone"></i> +91 79774 34470
-                </a>
-
-                <a href="#contact" class="btn-outline">Schedule Visit</a>
-
-                <button id="mobileThemeToggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter username">
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-        <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Luxury Apartment" loading="lazy">
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h2 id="hero-heading">Curating Exceptional Living Experiences in Kalyan Dombivli</h2>
-            <p class="hero-subtitle">Discover luxury apartments, premium commercial spaces, and bespoke real estate solutions tailored to your aspirations. Your journey to an extraordinary lifestyle begins here.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">
-                    <i class="fas fa-building"></i> View Our Projects
-                </a>
-                <!-- WhatsApp consultation updated to 7977434470 -->
-                <a href="https://wa.me/917977434470" class="btn-outline" style="border-color: var(--secondary); color: var(--secondary);">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Consultation
-                </a>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter password">
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats" aria-labelledby="stats-heading">
-        <div class="container">
-            <h2 id="stats-heading" class="sr-only">Our Achievements</h2>
-            <div class="stats-container">
-                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-home"></i></div><div class="stat-number" data-count="500">0</div><div class="stat-text">Happy Families</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-handshake"></i></div><div class="stat-number" data-count="50">0</div><div class="stat-text">Projects Completed</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-number" data-count="15">0</div><div class="stat-text">Years Experience</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div><div class="stat-number" data-count="4">0</div><div class="stat-text">Upcoming Projects</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about" aria-labelledby="about-heading">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="about-heading">About Nirman Properties</h2>
-                <p>With over 15 years in the real estate industry, we specialize in luxury properties in Kalyan East, offering personalized consultancy and end-to-end support for your investment needs.</p>
-            </div>
-            <div class="about-content fade-in">
-                <div class="about-text">
-                    <h3>Why Choose Us?</h3>
-                    <p>Our team of experts provides tailored solutions, from property selection to legal verification, ensuring a seamless experience. We focus on high-ROI opportunities in prime locations.</p>
-                    <p>Committed to excellence, transparency, and client satisfaction, Nirman Properties is RERA registered and trusted by hundreds of families.</p>
-                    <a href="#contact" class="btn-primary">Learn More</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team at Nirman Properties office" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects - All WhatsApp links updated to 7977434470 -->
-    <section class="featured-projects" id="projects" aria-labelledby="projects-heading">
-        <div class="container">
-            <div class="section-header"><h2 id="projects-heading">Featured Luxury Projects</h2><p>Discover our curated selection of premium residential projects in prime locations across Kalyan East</p></div>
-            <div class="projects-grid">
-                <div class="project-card fade-in"><div class="project-badge">Under Construction</div><img src="https://housing-images.n7net.in/4f2250e8/f739c99f016dfd2287f86ef7ffd28ac4/v0/large/seasons_sahara_building_no_3-kalyan_east-mumbai-samarth_sai_builders_and_developers.jpeg" class="project-image" alt="Sahara Season" loading="lazy"><div class="project-content"><h3>Season Sahara</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Prime Location</div><p>Luxury apartments with premium amenities including swimming pool, gym, and landscaped gardens.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>900 - 1300 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2025 Ready</span></div></div><a href="https://wa.me/917977434470?text=Hi,%20I'm%20interested%20in%20Sahara%20Season%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
-                <div class="project-card fade-in"><div class="project-badge">Pre-Booking Open</div><img src="https://davakharsereno.com/images/new/TOP-DOWN-0318_(1).jpg" class="project-image" alt="Davkhar Serino" loading="lazy"><div class="project-content"><h3>Davkhar Serino</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Near Metro</div><p>Modern smart homes with advanced security features and energy-efficient design near major transportation hubs.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>1, 2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>650 - 1200 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2026 Ready</span></div></div><a href="https://wa.me/917977434470?text=Hi,%20I'm%20interested%20in%20Davkhar%20Serino%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
-                <div class="project-card fade-in"><div class="project-badge">Under Construction</div><img src="https://www.saketworld.in/server/php/files/property/84/saket-world-15.jpg" class="project-image" alt="Saket World" loading="lazy"><div class="project-content"><h3>Saket World</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Kalyan East, Family Hub</div><p>Family-centric community with clubhouse, children's play area, and 24/7 security in a prime location.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2 & 3 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>850 - 1400 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2025 Ready</span></div></div><a href="https://wa.me/917977434470?text=Hi,%20I'm%20interested%20in%20Saket%20World%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
-                <div class="project-card fade-in"><div class="project-badge">Upcoming</div><img src="https://static.squareyards.com/resources/images/thane/project-image/jh-zojwala-regency-park-project-project-large-image1-1753.jpg?aio=w-0;h-550" class="project-image" alt="JH Zojhwala" loading="lazy"><div class="project-content"><h3>JH Zojwalla Regency Park</h3><div class="project-location"><i class="fas fa-map-marker-alt"></i> Dombivli, High-Growth Area</div><p>High-growth investment opportunity with excellent connectivity to Mumbai and Thane. Premium commercial and residential spaces.</p><div class="project-features"><div class="feature"><i class="fas fa-bed"></i><span>2, 3 & 4 BHK</span></div><div class="feature"><i class="fas fa-ruler-combined"></i><span>1000 - 1800 sq.ft.</span></div><div class="feature"><i class="fas fa-calendar-alt"></i><span>2027 Ready</span></div></div><a href="https://wa.me/917977434470?text=Hi,%20I'm%20interested%20in%20JH%20Zojhwala%20project" class="btn-primary" style="width:100%; text-align:center; margin-top:10px;"><i class="fab fa-whatsapp"></i> Enquire Now</a></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Virtual Tour Section -->
-    <section class="virtual-tour" aria-labelledby="virtual-tour-heading">
-        <div class="container">
-            <div class="virtual-tour-content">
-                <h2 id="virtual-tour-heading">Experience Properties in 360°</h2>
-                <p>Take immersive virtual tours of our properties from the comfort of your home. Explore every corner before you visit.</p>
-                <a href="#contact" class="btn-primary"><i class="fas fa-vr-cardboard"></i> Schedule Virtual Tour</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services" aria-labelledby="services-heading">
-        <div class="container">
-            <div class="section-header"><h2 id="services-heading">Our Premium Services</h2><p>Comprehensive real estate solutions tailored to your unique requirements</p></div>
-            <div class="services-grid">
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-search-dollar"></i></div><h3>Property Search & Selection</h3><p>Curated property shortlisting based on your preferences, budget, and lifestyle requirements.</p></div>
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Price Negotiation</h3><p>Expert negotiation to secure the best possible price and terms for your property transaction.</p></div>
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-balance-scale"></i></div><h3>Legal Verification</h3><p>Thorough legal due diligence including title verification, documentation, and compliance checks.</p></div>
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-home"></i></div><h3>NRI Services</h3><p>Complete assistance for NRIs including virtual tours, power of attorney, and remote coordination.</p></div>
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Investment Advisory</h3><p>Strategic guidance for property investment with focus on ROI, growth potential, and market trends.</p></div>
-                <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-file-contract"></i></div><h3>End-to-End Support</h3><p>Complete transaction management from search to possession, including registration and loan processing.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
-        <div class="container">
-            <div class="section-header"><h2 id="testimonials-heading">What Our Clients Say</h2><p>Discover why families trust us for their dream homes</p></div>
-            <div class="swiper testimonials-swiper fade-in">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"Nirman Properties made finding our perfect 3BHK in Kalyan East effortless. Their negotiation skills saved us a fortune!"</blockquote><p>- Priya S., Happy Homeowner</p></div></div>
-                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"Excellent legal verification and NRI support. We closed the deal remotely without any hassle. Highly recommended!"</blockquote><p>- Rajesh K., NRI Investor</p></div></div>
-                    <div class="swiper-slide"><div class="testimonial-card"><blockquote>"From virtual tours to possession, their end-to-end service was seamless. Professional team with great insights."</blockquote><p>- Anita M., Family Client</p></div></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section - Phone numbers updated to 7977434470 -->
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
-        <div class="container">
-            <div class="section-header"><h2 id="contact-heading">Get In Touch</h2><p>Schedule a consultation with our real estate experts <b>We Are Waiting For You</b></p></div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-details"><h4>Call Us</h4><p><a href="tel:7977434470" style="color: var(--primary); text-decoration: none; font-weight: 600;">+91 79774 34470</a></p><p style="color: var(--text); opacity: 0.8; margin-top:5px;">Mon-Sat: 10 AM - 8 PM</p></div></div>
-                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-details"><h4>WhatsApp</h4><p><a href="https://wa.me/917977434470" style="color: var(--primary); text-decoration: none; font-weight: 600;">Instant Response Available</a></p><p style="color: var(--text); opacity: 0.8; margin-top:5px;">Quick property details & appointments</p></div></div>
-                    <div class="contact-item fade-in"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-details"><h4>Visit Our Office</h4><p style="font-weight:600; color:var(--primary);">Kalyan East, Maharashtra</p><p style="color: var(--text); opacity:0.8; margin-top:5px;">By appointment only</p></div></div>
-                </div>
-                <div class="contact-form fade-in">
-                    <h3 style="margin-bottom:30px; font-size:1.8rem;">Request a Callback</h3>
-                    <form id="contactForm" novalidate>
-                        <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" class="form-control" required></div>
-                        <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" class="form-control" required></div>
-                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" class="form-control"></div>
-                        <div class="form-group"><label for="projectInterest">Project Interest</label><select id="projectInterest" class="form-control"><option value="">Select a project</option><option value="sahara">Sahara Season</option><option value="serino">Davkhar Serino</option><option value="saket">Saket World</option><option value="zhojhwala">JH Zojhwala Project</option><option value="other">Other Properties</option></select></div>
-                        <div class="form-group"><label for="message">Additional Requirements</label><textarea id="message" class="form-control" rows="4" placeholder="Tell us about your requirements..."></textarea></div>
-                        <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i> Submit Request</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer - Phone numbers updated to 7977434470 -->
-    <footer role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo"><a href="#" class="logo"><div class="logo-text"><h1>NIRMAN PROPERTIES</h1><span class="tagline"> </span></div></a><p>Your trusted partner for premium real estate in Kalyan East. We specialize in luxury apartments, premium commercial spaces, and bespoke property solutions with end-to-end consultation.</p><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/917977434470" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li><li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li><li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
-                <div class="footer-projects"><h4>Our Projects</h4><ul><li>Sahara Season</li><li>Davkhar Serino</li><li>Saket World</li><li>JH Zojhwala Project</li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><p style="margin-bottom:15px; color:var(--text); opacity:0.8;"><i class="fas fa-phone" style="margin-right:10px;"></i><a href="tel:7977434470" style="color:var(--text); text-decoration:none;">+91 79774 34470</a></p><p style="color:var(--text); opacity:0.8;"><i class="fas fa-map-marker-alt" style="margin-right:10px;"></i>Kalyan East, Maharashtra</p></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 Nirman Properties. All Rights Reserved. | RERA Registered | <a href="tel:7977434470" style="color:var(--gold); text-decoration:none;">Call: +91 79774 34470</a></p></div>
-        </div>
-    </footer>
-
-    <!-- POPUP MODAL (appears on load) -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-modal">
-            <button class="popup-close" id="popupClose">&times;</button>
-            <h3>Get Exclusive Updates</h3>
-            <p>Fill the form to receive latest project details & offers</p>
-            <form id="popupForm">
-                <div class="form-group">
-                    <label for="popupName">Full Name *</label>
-                    <input type="text" id="popupName" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="popupPhone">Phone Number *</label>
-                    <input type="tel" id="popupPhone" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="popupEmail">Email Address</label>
-                    <input type="email" id="popupEmail" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="popupProject">Project Interest (optional)</label>
-                    <select id="popupProject" class="form-control">
-                        <option value="">Select</option>
-                        <option value="Sahara Season">Sahara Season</option>
-                        <option value="Davkhar Serino">Davkhar Serino</option>
-                        <option value="Saket World">Saket World</option>
-                        <option value="JH Zojhwala">JH Zojhwala</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
-            </form>
+            <button class="btn-login" onclick="handleLogin()">Sign In</button>
+            <p class="login-error" id="loginError">Invalid credentials!</p>
+            <div class="login-footer">Powered by <span>Nirman Group</span></div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme');
-        const icon = themeToggle ? themeToggle.querySelector('i') : null;
-        const mobileIcon = mobileThemeToggle ? mobileThemeToggle.querySelector('i') : null;
+    <!-- ==================== MAIN APPLICATION ==================== -->
+    <div class="app-container" id="appContainer">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="s-icon">RK</div>
+                <h3>RK Enterprises</h3>
+                <small>Billing System</small>
+                <div class="tagline-sm">Moving Earth, Building Relationships</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="active" onclick="showPage('dashboard')" data-page="dashboard">
+                    <span class="nav-icon">📊</span> Dashboard
+                </a>
+                <a onclick="showPage('new-invoice')" data-page="new-invoice">
+                    <span class="nav-icon">📝</span> Create Invoice
+                </a>
+                <a onclick="showPage('invoices')" data-page="invoices">
+                    <span class="nav-icon">📋</span> All Invoices
+                </a>
+                <a onclick="showPage('ledger')" data-page="ledger">
+                    <span class="nav-icon">📒</span> Customer Ledger
+                </a>
+                <a onclick="showPage('customers')" data-page="customers">
+                    <span class="nav-icon">👥</span> Customers
+                </a>
+                <a onclick="showPage('machines')" data-page="machines">
+                    <span class="nav-icon">🚛</span> Machines
+                </a>
+                <a onclick="handleLogout()" style="margin-top:20px; color:#ff8a80;">
+                    <span class="nav-icon">🚪</span> Logout
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <span class="powered-by">POWERED BY NIRMAN GROUP</span><br>
+                © RK Enterprises | Kalyan
+            </div>
+        </aside>
 
-        if (currentTheme === 'light') {
-            body.classList.add('light');
-            if (icon) icon.classList.replace('fa-moon', 'fa-sun');
-            if (mobileIcon) mobileIcon.classList.replace('fa-moon', 'fa-sun');
+        <main class="main-content">
+            <!-- Dashboard -->
+            <div class="page active" id="page-dashboard">
+                <div class="top-bar">
+                    <h1>Dashboard</h1>
+                    <button class="btn btn-primary" onclick="showPage('new-invoice')">+ Create Invoice</button>
+                </div>
+                <div class="stat-cards" id="dashboardStats"></div>
+                <div class="card" style="margin-top:20px;">
+                    <div class="card-header"><h3>Recent Invoices</h3></div>
+                    <div class="card-body" id="recentInvoicesTable"></div>
+                </div>
+            </div>
+
+            <!-- Create Invoice -->
+            <div class="page" id="page-new-invoice">
+                <div class="top-bar">
+                    <h1>Create New Invoice</h1>
+                    <div>
+                        <button class="btn btn-outline" onclick="previewInvoice()">Preview</button>
+                        <button class="btn btn-primary" onclick="saveInvoice()">Save Invoice</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="section-title">Company Information</div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Company</label><input type="text" value="RK ENTERPRISES" readonly></div>
+                            <div class="form-group-app"><label>GSTIN</label><input type="text" value="27BZCPA8031P1Z7" readonly></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Address</label><textarea readonly>H2 209, Swarn Rekha Society, Lockgram, Kalyan (E) - 421306</textarea></div>
+                            <div class="form-group-app"><label>Contact</label><textarea readonly>7700991524 / 7977434470 | RKINFRA7979@GMAIL.COM</textarea></div>
+                        </div>
+                        <div class="form-group-app"><label>Bank</label><input type="text" value="Axis Bank | A/C: 922020051156830 | IFSC: UTIB0003581 | MIDC Dombivali" readonly></div>
+
+                        <div class="section-title">Invoice Details</div>
+                        <div class="form-row form-row-3">
+                            <div class="form-group-app"><label>Invoice No.</label>
+                                <div style="display:flex;align-items:center;gap:6px;">
+                                    <span style="font-weight:700;font-size:14px;">RK</span>
+                                    <input type="text" id="invNumberSuffix" placeholder="01" style="width:70px;text-align:center;" maxlength="3" oninput="updateFullInvNumber()">
+                                </div>
+                            </div>
+                            <div class="form-group-app"><label>Date</label><input type="date" id="invDate"></div>
+                            <div class="form-group-app"><label>Reference</label><input type="text" id="billingPeriod" placeholder="e.g., Monthly Rent"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Period From</label><input type="date" id="periodFrom"></div>
+                            <div class="form-group-app"><label>Period To</label><input type="date" id="periodTo"></div>
+                        </div>
+                        <input type="hidden" id="fullInvNumber">
+
+                        <div class="section-title">Customer Details</div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Select Customer</label>
+                                <select id="customerSelect" onchange="fillCustomerDetails()">
+                                    <option value="">-- Choose --</option>
+                                </select>
+                            </div>
+                            <div class="form-group-app"><label>Quick Add</label><button class="btn btn-sm btn-outline" onclick="openCustomerModal()" style="margin-top:20px;">+ New</button></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Name *</label><input type="text" id="custName"></div>
+                            <div class="form-group-app"><label>GSTIN</label><input type="text" id="custGST"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group-app"><label>Phone</label><input type="text" id="custPhone"></div>
+                            <div class="form-group-app"><label>Address</label><textarea id="custAddress"></textarea></div>
+                        </div>
+
+                        <div class="section-title">Machine Work Records</div>
+                        <div id="workRecordsContainer">
+                            <div class="work-row" id="work-row-0">
+                                <div class="form-group-app"><label>Machine</label><select class="machine-select"><option value="">Select</option></select></div>
+                                <div class="form-group-app"><label>Months/Days</label><input type="number" class="work-qty" value="1" min="0" step="0.5" onchange="calculateTotals()"></div>
+                                <div class="form-group-app"><label>Rate (₹)</label><input type="number" class="work-rate" value="0" onchange="calculateTotals()"></div>
+                                <div class="form-group-app"><label>Amount (₹)</label><input type="number" class="work-amount" value="0" readonly></div>
+                                <button class="remove-row" onclick="removeWorkRow(0)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-row-btn" onclick="addWorkRow()">+ Add Machine</button>
+
+                        <div class="section-title">Additional Charges</div>
+                        <div id="chargesContainer">
+                            <div class="charge-row" id="charge-row-0">
+                                <div class="form-group-app"><label>Description</label><input type="text" class="charge-name" placeholder="Charge name"></div>
+                                <div class="form-group-app"><label>Qty</label><input type="number" class="charge-qty" value="1" min="0" onchange="calculateTotals()"></div>
+                                <div class="form-group-app"><label>Rate (₹)</label><input type="number" class="charge-rate" value="0" onchange="calculateTotals()"></div>
+                                <div class="form-group-app"><label>Amount (₹)</label><input type="number" class="charge-amount" value="0" readonly></div>
+                                <button class="remove-row" onclick="removeChargeRow(0)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-row-btn" onclick="addChargeRow()">+ Add Charge</button>
+
+                        <div class="section-title">Calculation</div>
+                        <div class="form-row form-row-3">
+                            <div class="form-group-app"><label>Discount (%)</label><input type="number" id="discountPercent" value="0" min="0" max="100" onchange="calculateTotals()"></div>
+                            <div class="form-group-app"><label>GST Type</label>
+                                <select id="taxType" onchange="calculateTotals()">
+                                    <option value="cgst_sgst">CGST 9% + SGST 9%</option>
+                                    <option value="igst">IGST 18%</option>
+                                </select>
+                            </div>
+                            <div class="form-group-app"><label>GST Rate</label><input type="number" id="taxRate" value="18" readonly></div>
+                        </div>
+                        <div class="form-group-app"><label>Payment Terms</label><textarea id="invNotes">Payment within 25 days. Late payment penalty as per mutual understanding.</textarea></div>
+
+                        <div class="totals-box">
+                            <div class="totals-row"><span>Subtotal:</span><span>₹ <b id="displaySubtotal">0.00</b></span></div>
+                            <div class="totals-row"><span>Discount:</span><span>₹ <b id="displayDiscount">0.00</b></span></div>
+                            <div class="totals-row"><span>Taxable Value:</span><span>₹ <b id="displayTaxable">0.00</b></span></div>
+                            <div class="totals-row"><span id="taxLabel">CGST 9% + SGST 9%:</span><span>₹ <b id="displayTax">0.00</b></span></div>
+                            <div class="totals-row total"><span>Grand Total:</span><span>₹ <b id="displayTotal">0.00</b></span></div>
+                            <div class="amount-in-words" id="amountInWords"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="page" id="page-preview">
+                <div class="top-bar no-print">
+                    <h1>Invoice Preview</h1>
+                    <div>
+                        <button class="btn btn-outline" onclick="showPage('new-invoice')">← Edit</button>
+                        <button class="btn btn-primary" onclick="window.print()">Print</button>
+                        <button class="btn btn-success" onclick="saveInvoice()">Save</button>
+                    </div>
+                </div>
+                <div class="invoice-preview" id="invoicePreviewContent"></div>
+            </div>
+
+            <!-- All Invoices -->
+            <div class="page" id="page-invoices">
+                <div class="top-bar">
+                    <h1>All Invoices</h1>
+                    <div class="search-box">
+                        <input type="text" id="invoiceSearch" placeholder="Search..." oninput="loadInvoiceList()">
+                        <select id="invoiceStatusFilter" onchange="loadInvoiceList()">
+                            <option value="all">All</option>
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                            <option value="overdue">Overdue</option>
+                            <option value="partial">Partial</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" id="invoiceListTable"></div>
+                </div>
+            </div>
+
+            <!-- Ledger -->
+            <div class="page" id="page-ledger">
+                <div class="top-bar">
+                    <h1>Customer Ledger</h1>
+                    <div class="search-box">
+                        <select id="ledgerCustomerSelect" onchange="loadLedger()">
+                            <option value="">-- Select Customer --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card" id="ledgerContent" style="display:none;">
+                    <div class="card-body">
+                        <div class="ledger-summary" id="ledgerSummary"></div>
+                        <h4 style="margin-bottom:14px;font-family:'Georgia',serif;">Invoice History</h4>
+                        <div id="ledgerTable"></div>
+                        <div style="margin-top:18px;text-align:right;">
+                            <button class="btn btn-primary no-print" onclick="window.print()">Print Ledger</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty-state" id="ledgerEmpty">
+                    <div class="icon">📒</div>
+                    <p>Select a customer to view ledger</p>
+                </div>
+            </div>
+
+            <!-- Customers -->
+            <div class="page" id="page-customers">
+                <div class="top-bar">
+                    <h1>Customers</h1>
+                    <button class="btn btn-primary" onclick="openCustomerModal()">+ Add</button>
+                </div>
+                <div class="card">
+                    <div class="card-body" id="customerListTable"></div>
+                </div>
+            </div>
+
+            <!-- Machines -->
+            <div class="page" id="page-machines">
+                <div class="top-bar">
+                    <h1>Machines</h1>
+                    <button class="btn btn-primary" onclick="openMachineModal()">+ Add</button>
+                </div>
+                <div class="card">
+                    <div class="card-body" id="machineListTable"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="customerModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeCustomerModal()">×</button>
+            <h3>Add Customer</h3>
+            <div class="form-group-app"><label>Name *</label><input type="text" id="modalCustName"></div>
+            <div class="form-group-app"><label>Phone</label><input type="text" id="modalCustPhone"></div>
+            <div class="form-group-app"><label>Email</label><input type="email" id="modalCustEmail"></div>
+            <div class="form-group-app"><label>GSTIN</label><input type="text" id="modalCustGST"></div>
+            <div class="form-group-app"><label>Address</label><textarea id="modalCustAddress"></textarea></div>
+            <button class="btn btn-primary" onclick="saveCustomer()" style="margin-top:14px;">Save</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="editCustomerModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeEditCustomerModal()">×</button>
+            <h3>Edit Customer</h3>
+            <input type="hidden" id="editCustId">
+            <div class="form-group-app"><label>Name *</label><input type="text" id="editCustName"></div>
+            <div class="form-group-app"><label>Phone</label><input type="text" id="editCustPhone"></div>
+            <div class="form-group-app"><label>Email</label><input type="email" id="editCustEmail"></div>
+            <div class="form-group-app"><label>GSTIN</label><input type="text" id="editCustGST"></div>
+            <div class="form-group-app"><label>Address</label><textarea id="editCustAddress"></textarea></div>
+            <button class="btn btn-primary" onclick="updateCustomer()" style="margin-top:14px;">Update</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="machineModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeMachineModal()">×</button>
+            <h3>Add Machine</h3>
+            <div class="form-group-app"><label>Name *</label><input type="text" id="modalMachineName"></div>
+            <div class="form-group-app"><label>Reg. No.</label><input type="text" id="modalMachineReg"></div>
+            <button class="btn btn-primary" onclick="saveMachine()" style="margin-top:14px;">Save</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="editMachineModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeEditMachineModal()">×</button>
+            <h3>Edit Machine</h3>
+            <input type="hidden" id="editMachineId">
+            <div class="form-group-app"><label>Name *</label><input type="text" id="editMachineName"></div>
+            <div class="form-group-app"><label>Reg. No.</label><input type="text" id="editMachineReg"></div>
+            <button class="btn btn-primary" onclick="updateMachine()" style="margin-top:14px;">Update</button>
+        </div>
+    </div>
+
+    <script>
+        const U = 'NirmanGroup',
+            P = 'Rushi@1458';
+
+        function gD(k, d = []) { try { const v = localStorage.getItem('rke_final_' + k); return v ? JSON.parse(v) : d; } catch (
+                e) { return d; } }
+
+        function sD(k, v) { localStorage.setItem('rke_final_' + k, JSON.stringify(v)); }
+
+        function gC() { return gD('cust', []); }
+
+        function sC(d) { sD('cust', d); }
+
+        function gM() { return gD('mach', []); }
+
+        function sM(d) { sD('mach', d); }
+
+        function gI() { return gD('inv', []); }
+
+        function sI(d) { sD('inv', d); }
+
+        function nS() { return String(gI().length + 1).padStart(2, '0'); }
+
+        function handleLogin() {
+            if (document.getElementById('loginUsername').value.trim() === U && document.getElementById('loginPassword').value
+                .trim() === P) {
+                sessionStorage.setItem('rke_final_auth', '1');
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('appContainer').style.display = 'flex';
+                initApp();
+                showToast('Welcome!', 'success');
+            } else { document.getElementById('loginError').style.display = 'block'; }
         }
 
-        const toggleTheme = () => {
-            body.classList.toggle('light');
-            const isLight = body.classList.contains('light');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            if (icon) {
-                icon.classList.toggle('fa-moon');
-                icon.classList.toggle('fa-sun');
+        function handleLogout() { if (confirm('Logout?')) { sessionStorage.removeItem('rke_final_auth');
+                location.reload(); } }
+
+        function showPage(p) {
+            document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+            const el = document.getElementById('page-' + p);
+            if (el) el.classList.add('active');
+            document.querySelectorAll('.sidebar-nav a[data-page]').forEach(a => a.classList.remove('active'));
+            const n = document.querySelector(`.sidebar-nav a[data-page="${p}"]`);
+            if (n) n.classList.add('active');
+            if (p === 'dashboard') loadDashboard();
+            if (p === 'invoices') loadInvoiceList();
+            if (p === 'customers') loadCustomerList();
+            if (p === 'machines') loadMachineList();
+            if (p === 'ledger') { loadLedgerCustomers();
+                document.getElementById('ledgerContent').style.display = 'none';
+                document.getElementById('ledgerEmpty').style.display = 'block'; }
+            if (p === 'new-invoice') {
+                if (!document.getElementById('invNumberSuffix').value || document.getElementById('invNumberSuffix').dataset
+                    .auto === 'true') { document.getElementById('invNumberSuffix').value = nS();
+                    document.getElementById('invNumberSuffix').dataset.auto = 'true'; }
+                updateFullInvNumber();
+                document.getElementById('invDate').value = new Date().toISOString().split('T')[0];
+                const now = new Date();
+                document.getElementById('periodFrom').value = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
+                    .split('T')[0];
+                document.getElementById('periodTo').value = new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString()
+                    .split('T')[0];
+                loadCustomerDropdown();
+                loadMachineDropdowns();
+                calculateTotals();
             }
-            if (mobileIcon) {
-                mobileIcon.classList.toggle('fa-moon');
-                mobileIcon.classList.toggle('fa-sun');
-            }
-        };
+        }
 
-        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+        function updateFullInvNumber() { document.getElementById('fullInvNumber').value = 'RK' + (document.getElementById(
+                'invNumberSuffix').value.trim() || '01'); }
 
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavLinks = mobileNav.querySelectorAll('a');
-        mobileMenuBtn.addEventListener('click', () => {
-            const isActive = mobileMenuBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', isActive);
-            mobileNav.setAttribute('aria-hidden', !isActive);
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        });
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileNav.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
+        function showToast(m, t = 'success') {
+            const e = document.querySelector('.toast');
+            if (e) e.remove();
+            const d = document.createElement('div');
+            d.className = `toast toast-${t}`;
+            d.textContent = m;
+            document.body.appendChild(d);
+            setTimeout(() => d.remove(), 2800);
+        }
+
+        function openCustomerModal() { ['modalCustName', 'modalCustPhone', 'modalCustEmail', 'modalCustGST', 'modalCustAddress']
+                .forEach(id => document.getElementById(id).value = '');
+            document.getElementById('customerModal').classList.add('show'); }
+
+        function closeCustomerModal() { document.getElementById('customerModal').classList.remove('show'); }
+
+        function saveCustomer() {
+            const n = document.getElementById('modalCustName').value.trim();
+            if (!n) { showToast('Name required!', 'error'); return; }
+            const c = { id: Date.now(), name: n, phone: document.getElementById('modalCustPhone').value.trim(), email: document
+                    .getElementById('modalCustEmail').value.trim(), gstin: document.getElementById('modalCustGST').value
+                    .trim(), address: document.getElementById('modalCustAddress').value.trim() };
+            const a = gC();
+            a.push(c);
+            sC(a);
+            closeCustomerModal();
+            loadCustomerDropdown();
+            loadCustomerList();
+            showToast('Customer added!');
+        }
+
+        function loadCustomerDropdown() {
+            const s = document.getElementById('customerSelect');
+            s.innerHTML = '<option value="">-- Choose --</option>';
+            gC().forEach(c => { s.innerHTML +=
+                    `<option value="${c.id}" data-name="${c.name}" data-phone="${c.phone}" data-gst="${c.gstin}" data-address="${c.address}">${c.name}</option>`; });
+        }
+
+        function fillCustomerDetails() {
+            const o = document.getElementById('customerSelect').options[document.getElementById('customerSelect')
+            .selectedIndex];
+            if (o.value) { document.getElementById('custName').value = o.dataset.name || '';
+                document.getElementById('custPhone').value = o.dataset.phone || '';
+                document.getElementById('custGST').value = o.dataset.gst || '';
+                document.getElementById('custAddress').value = o.dataset.address || ''; }
+        }
+
+        function loadCustomerList() {
+            const a = gC();
+            const ctr = document.getElementById('customerListTable');
+            if (!a.length) { ctr.innerHTML = '<div class="empty-state"><div class="icon">👥</div><p>No customers.</p></div>'; return; }
+            let h =
+                '<table><thead><tr><th>Name</th><th>Phone</th><th>GSTIN</th><th>Actions</th></tr></thead><tbody>';
+            a.forEach(c => { h +=
+                    `<tr><td><strong>${c.name}</strong></td><td>${c.phone||'-'}</td><td>${c.gstin||'-'}</td><td><button class="btn btn-sm btn-outline" onclick="openEditCustomerModal(${c.id})">Edit</button> <button class="btn btn-sm btn-danger" onclick="deleteCustomer(${c.id})">Del</button></td></tr>`; });
+            h += '</tbody></table>';
+            ctr.innerHTML = h;
+        }
+
+        function openEditCustomerModal(id) {
+            const c = gC().find(x => x.id === id);
+            if (!c) return;
+            document.getElementById('editCustId').value = c.id;
+            document.getElementById('editCustName').value = c.name;
+            document.getElementById('editCustPhone').value = c.phone || '';
+            document.getElementById('editCustEmail').value = c.email || '';
+            document.getElementById('editCustGST').value = c.gstin || '';
+            document.getElementById('editCustAddress').value = c.address || '';
+            document.getElementById('editCustomerModal').classList.add('show');
+        }
+
+        function closeEditCustomerModal() { document.getElementById('editCustomerModal').classList.remove('show'); }
+
+        function updateCustomer() {
+            const id = parseInt(document.getElementById('editCustId').value);
+            const n = document.getElementById('editCustName').value.trim();
+            if (!n) { showToast('Name required!', 'error'); return; }
+            let a = gC();
+            const i = a.findIndex(x => x.id === id);
+            if (i >= 0) { a[i].name = n;
+                a[i].phone = document.getElementById('editCustPhone').value.trim();
+                a[i].email = document.getElementById('editCustEmail').value.trim();
+                a[i].gstin = document.getElementById('editCustGST').value.trim();
+                a[i].address = document.getElementById('editCustAddress').value.trim();
+                sC(a);
+                closeEditCustomerModal();
+                loadCustomerDropdown();
+                loadCustomerList();
+                showToast('Updated!'); }
+        }
+
+        function deleteCustomer(id) { if (confirm('Delete?')) { sC(gC().filter(x => x.id !== id));
+                loadCustomerList();
+                loadCustomerDropdown();
+                showToast('Deleted.'); } }
+
+        function openMachineModal() { document.getElementById('modalMachineName').value = '';
+            document.getElementById('modalMachineReg').value = '';
+            document.getElementById('machineModal').classList.add('show'); }
+
+        function closeMachineModal() { document.getElementById('machineModal').classList.remove('show'); }
+
+        function saveMachine() {
+            const n = document.getElementById('modalMachineName').value.trim();
+            if (!n) { showToast('Name required!', 'error'); return; }
+            const m = { id: Date.now(), name: n, regNo: document.getElementById('modalMachineReg').value.trim() };
+            const a = gM();
+            a.push(m);
+            sM(a);
+            closeMachineModal();
+            loadMachineDropdowns();
+            loadMachineList();
+            showToast('Machine added!');
+        }
+
+        function loadMachineDropdowns() {
+            const ms = gM();
+            document.querySelectorAll('.machine-select').forEach(s => {
+                const cv = s.value;
+                s.innerHTML = '<option value="">Select</option>';
+                ms.forEach(m => { s.innerHTML +=
+                        `<option value="${m.id}">${m.name} ${m.regNo?'('+m.regNo+')':''}</option>`; });
+                if (cv) s.value = cv;
             });
-        });
+        }
 
-        // Header scroll effect
-        const header = document.getElementById('mainHeader');
-        function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 50); }
-        window.addEventListener('scroll', updateHeader); updateHeader();
+        function loadMachineList() {
+            const a = gM();
+            const ctr = document.getElementById('machineListTable');
+            if (!a.length) { ctr.innerHTML = '<div class="empty-state"><div class="icon">🚛</div><p>No machines.</p></div>'; return; }
+            let h =
+                '<table><thead><tr><th>Name</th><th>Reg. No.</th><th>Actions</th></tr></thead><tbody>';
+            a.forEach(m => { h +=
+                    `<tr><td><strong>${m.name}</strong></td><td>${m.regNo||'-'}</td><td><button class="btn btn-sm btn-outline" onclick="openEditMachineModal(${m.id})">Edit</button> <button class="btn btn-sm btn-danger" onclick="deleteMachine(${m.id})">Del</button></td></tr>`; });
+            h += '</tbody></table>';
+            ctr.innerHTML = h;
+        }
 
-        // Counters
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
-        const startCounter = (counter) => {
-            const target = +counter.getAttribute('data-count');
-            const count = +counter.innerText;
-            const increment = target / speed;
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(() => startCounter(counter), 10);
-            } else counter.innerText = target;
-        };
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { startCounter(entry.target); counterObserver.unobserve(entry.target); }
+        function openEditMachineModal(id) {
+            const m = gM().find(x => x.id === id);
+            if (!m) return;
+            document.getElementById('editMachineId').value = m.id;
+            document.getElementById('editMachineName').value = m.name;
+            document.getElementById('editMachineReg').value = m.regNo || '';
+            document.getElementById('editMachineModal').classList.add('show');
+        }
+
+        function closeEditMachineModal() { document.getElementById('editMachineModal').classList.remove('show'); }
+
+        function updateMachine() {
+            const id = parseInt(document.getElementById('editMachineId').value);
+            const n = document.getElementById('editMachineName').value.trim();
+            if (!n) { showToast('Name required!', 'error'); return; }
+            let a = gM();
+            const i = a.findIndex(x => x.id === id);
+            if (i >= 0) { a[i].name = n;
+                a[i].regNo = document.getElementById('editMachineReg').value.trim();
+                sM(a);
+                closeEditMachineModal();
+                loadMachineDropdowns();
+                loadMachineList();
+                showToast('Updated!'); }
+        }
+
+        function deleteMachine(id) { if (confirm('Delete?')) { sM(gM().filter(x => x.id !== id));
+                loadMachineList();
+                loadMachineDropdowns();
+                showToast('Deleted.'); } }
+
+        let wrc = 1,
+            crc = 1;
+
+        function addWorkRow() {
+            const idx = wrc++;
+            let opts = '<option value="">Select</option>';
+            gM().forEach(m => { opts += `<option value="${m.id}">${m.name} ${m.regNo?'('+m.regNo+')':''}</option>`; });
+            document.getElementById('workRecordsContainer').insertAdjacentHTML('beforeend', `
+                <div class="work-row" id="work-row-${idx}">
+                    <div class="form-group-app"><label>Machine</label><select class="machine-select">${opts}</select></div>
+                    <div class="form-group-app"><label>Months/Days</label><input type="number" class="work-qty" value="1" min="0" step="0.5" onchange="calculateTotals()"></div>
+                    <div class="form-group-app"><label>Rate (₹)</label><input type="number" class="work-rate" value="0" onchange="calculateTotals()"></div>
+                    <div class="form-group-app"><label>Amount (₹)</label><input type="number" class="work-amount" value="0" readonly></div>
+                    <button class="remove-row" onclick="removeWorkRow(${idx})">×</button>
+                </div>`);
+            calculateTotals();
+        }
+
+        function removeWorkRow(i) {
+            if (document.querySelectorAll('#workRecordsContainer .work-row').length <= 1) { showToast(
+                'Need at least 1 row!', 'error'); return; }
+            const r = document.getElementById('work-row-' + i);
+            if (r) r.remove();
+            calculateTotals();
+        }
+
+        function addChargeRow() {
+            const idx = crc++;
+            document.getElementById('chargesContainer').insertAdjacentHTML('beforeend', `
+                <div class="charge-row" id="charge-row-${idx}">
+                    <div class="form-group-app"><label>Description</label><input type="text" class="charge-name" placeholder="Charge name"></div>
+                    <div class="form-group-app"><label>Qty</label><input type="number" class="charge-qty" value="1" min="0" onchange="calculateTotals()"></div>
+                    <div class="form-group-app"><label>Rate (₹)</label><input type="number" class="charge-rate" value="0" onchange="calculateTotals()"></div>
+                    <div class="form-group-app"><label>Amount (₹)</label><input type="number" class="charge-amount" value="0" readonly></div>
+                    <button class="remove-row" onclick="removeChargeRow(${idx})">×</button>
+                </div>`);
+            calculateTotals();
+        }
+
+        function removeChargeRow(i) {
+            const rows = document.querySelectorAll('#chargesContainer .charge-row');
+            if (rows.length <= 1) { const r = document.getElementById('charge-row-' + i); if (r) { r.querySelector(
+                        '.charge-name').value = '';
+                    r.querySelector('.charge-qty').value = '0';
+                    r.querySelector('.charge-rate').value = '0';
+                    r.querySelector('.charge-amount').value = '0'; }
+                calculateTotals(); return; }
+            const r = document.getElementById('charge-row-' + i);
+            if (r) r.remove();
+            calculateTotals();
+        }
+
+        function n2w(num) {
+            if (!num || num === 0) return 'Zero Rupees Only';
+            const o = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve',
+                'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
+            ];
+            const t = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+            const c = n => { if (n < 20) return o[n]; if (n < 100) return t[Math.floor(n / 10)] + (n % 10 ? ' ' + o[n % 10] :
+                    ''); if (n < 1000) return o[Math.floor(n / 100)] + ' Hundred' + (n % 100 ? ' ' + c(n % 100) :
+                    ''); if (n < 100000) return c(Math.floor(n / 1000)) + ' Thousand' + (n % 1000 ? ' ' + c(n % 1000) :
+                    ''); if (n < 10000000) return c(Math.floor(n / 100000)) + ' Lakh' + (n % 100000 ? ' ' + c(n % 100000) :
+                    ''); return c(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 ? ' ' + c(n % 10000000) : ''); };
+            const r = Math.floor(num);
+            const p = Math.round((num - r) * 100);
+            let res = c(r) + ' Rupees';
+            if (p > 0) res += ' and ' + c(p) + ' Paise';
+            return res + ' Only';
+        }
+
+        function calculateTotals() {
+            let ws = 0;
+            document.querySelectorAll('#workRecordsContainer .work-row').forEach(r => {
+                const q = parseFloat(r.querySelector('.work-qty').value) || 0;
+                const rt = parseFloat(r.querySelector('.work-rate').value) || 0;
+                const a = q * rt;
+                r.querySelector('.work-amount').value = a.toFixed(2);
+                ws += a;
             });
-        }, { threshold: 0.5 });
-        counters.forEach(c => counterObserver.observe(c));
-
-        // Scroll animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const appearOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
-        }, { threshold: 0.1 });
-        fadeElements.forEach(el => appearOnScroll.observe(el));
-
-        // Swiper
-        new Swiper('.testimonials-swiper', {
-            loop: true, autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            breakpoints: { 768: { slidesPerView: 1 }, 992: { slidesPerView: 2 } }
-        });
-
-        // Contact form - WhatsApp number updated to 7977434470
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const project = document.getElementById('projectInterest').value;
-            const message = document.getElementById('message').value;
-            let whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A`;
-            if(email) whatsappMessage += `*Email:* ${email}%0A`;
-            if(project) whatsappMessage += `*Project Interest:* ${project}%0A`;
-            if(message) whatsappMessage += `*Message:* ${message}%0A`;
-            window.open(`https://wa.me/917977434470?text=${whatsappMessage}`, '_blank');
-            this.reset();
-            alert('Thank you! You will be redirected to WhatsApp.');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if(this.getAttribute('href')==='#') return;
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            let cs = 0;
+            document.querySelectorAll('#chargesContainer .charge-row').forEach(r => {
+                const q = parseFloat(r.querySelector('.charge-qty').value) || 0;
+                const rt = parseFloat(r.querySelector('.charge-rate').value) || 0;
+                const a = q * rt;
+                r.querySelector('.charge-amount').value = a.toFixed(2);
+                cs += a;
             });
-        });
+            const sub = ws + cs;
+            const dp = parseFloat(document.getElementById('discountPercent').value) || 0;
+            const da = sub * (dp / 100);
+            const txbl = sub - da;
+            const tax = txbl * 0.18;
+            const tot = Math.round(txbl + tax);
+            document.getElementById('displaySubtotal').textContent = sub.toFixed(2);
+            document.getElementById('displayDiscount').textContent = da.toFixed(2);
+            document.getElementById('displayTaxable').textContent = txbl.toFixed(2);
+            document.getElementById('displayTax').textContent = tax.toFixed(2);
+            document.getElementById('displayTotal').textContent = tot.toFixed(2);
+            document.getElementById('taxLabel').textContent = document.getElementById('taxType').value === 'cgst_sgst' ?
+                'CGST (9%) + SGST (9%):' : 'IGST (18%):';
+            document.getElementById('amountInWords').textContent = 'Amount in words: ' + n2w(tot);
+        }
 
-        // POPUP LOGIC
-        const popupOverlay = document.getElementById('popupOverlay');
-        const popupClose = document.getElementById('popupClose');
-        const popupForm = document.getElementById('popupForm');
+        function collectData() {
+            const wi = [];
+            document.querySelectorAll('#workRecordsContainer .work-row').forEach(r => {
+                const s = r.querySelector('.machine-select');
+                const mn = s.options[s.selectedIndex]?.text || '';
+                const mo = parseFloat(r.querySelector('.work-qty').value) || 0;
+                const rt = parseFloat(r.querySelector('.work-rate').value) || 0;
+                const am = parseFloat(r.querySelector('.work-amount').value) || 0;
+                if (mn || am > 0) wi.push({ machineName: mn, months: mo, rate: rt, amount: am });
+            });
+            const ch = [];
+            document.querySelectorAll('#chargesContainer .charge-row').forEach(r => {
+                const nm = r.querySelector('.charge-name').value.trim();
+                const q = parseFloat(r.querySelector('.charge-qty').value) || 0;
+                const rt = parseFloat(r.querySelector('.charge-rate').value) || 0;
+                const am = parseFloat(r.querySelector('.charge-amount').value) || 0;
+                if (nm || am > 0) ch.push({ name: nm, qty: q, rate: rt, amount: am });
+            });
+            const eid = document.getElementById('fullInvNumber').dataset.editId ? parseInt(document.getElementById(
+                'fullInvNumber').dataset.editId) : Date.now();
+            return {
+                id: eid,
+                invoiceNumber: document.getElementById('fullInvNumber').value,
+                invoiceDate: document.getElementById('invDate').value,
+                periodFrom: document.getElementById('periodFrom').value,
+                periodTo: document.getElementById('periodTo').value,
+                billingPeriod: document.getElementById('billingPeriod').value,
+                customer: { name: document.getElementById('custName').value, gstin: document.getElementById('custGST')
+                        .value, phone: document.getElementById('custPhone').value, address: document.getElementById(
+                            'custAddress').value },
+                workItems: wi,
+                charges: ch,
+                discountPercent: parseFloat(document.getElementById('discountPercent').value) || 0,
+                taxType: document.getElementById('taxType').value,
+                taxRate: 18,
+                notes: document.getElementById('invNotes').value,
+                status: document.getElementById('fullInvNumber').dataset.editStatus || 'pending',
+                createdAt: document.getElementById('fullInvNumber').dataset.editCreatedAt || new Date().toISOString(),
+            };
+        }
 
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                popupOverlay.classList.add('active');
-            }, 1500);
-        });
+        function saveInvoice() {
+            const d = collectData();
+            if (!d.customer.name) { showToast('Enter customer name!', 'error'); return; }
+            if (!d.workItems.length || d.workItems.every(w => w.amount === 0)) { showToast('Add machine entry!',
+                'error'); return; }
+            const invs = gI();
+            const ei = invs.findIndex(x => x.id === d.id);
+            if (ei >= 0) invs[ei] = d;
+            else invs.push(d);
+            sI(invs);
+            document.getElementById('invNumberSuffix').value = nS();
+            document.getElementById('invNumberSuffix').dataset.auto = 'true';
+            updateFullInvNumber();
+            ['editId', 'editStatus', 'editCreatedAt'].forEach(a => document.getElementById('fullInvNumber')
+                .removeAttribute('data-' + a));
+            showToast('Invoice saved!');
+            showPage('invoices');
+        }
 
-        popupClose.addEventListener('click', () => {
-            popupOverlay.classList.remove('active');
-        });
-        popupOverlay.addEventListener('click', (e) => {
-            if (e.target === popupOverlay) popupOverlay.classList.remove('active');
-        });
+        function previewInvoice() {
+            const d = collectData();
+            if (!d.customer.name) { showToast('Enter customer name!', 'error'); return; }
+            renderPreview(d);
+            showPage('preview');
+        }
 
-        // Popup form submission - WhatsApp number updated to 7977434470
-        popupForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('popupName').value;
-            const phone = document.getElementById('popupPhone').value;
-            const email = document.getElementById('popupEmail').value;
-            const project = document.getElementById('popupProject').value;
-            let msg = `*New Inquiry from Popup*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A`;
-            if(email) msg += `*Email:* ${email}%0A`;
-            if(project) msg += `*Project:* ${project}%0A`;
-            window.open(`https://wa.me/917977434470?text=${msg}`, '_blank');
-            popupOverlay.classList.remove('active');
-            popupForm.reset();
-        });
+        function renderPreview(d) {
+            const ws = d.workItems.reduce((s, w) => s + w.amount, 0);
+            const cs = d.charges.reduce((s, c) => s + c.amount, 0);
+            const sub = ws + cs;
+            const da = sub * (d.discountPercent / 100);
+            const txbl = sub - da;
+            const tax = txbl * 0.18;
+            const tot = Math.round(txbl + tax);
+            let sr = 1;
+            let wr = d.workItems.map(w =>
+                `<tr><td>${sr++}</td><td class="text-left">${w.machineName}</td><td>${w.months}</td><td class="text-right">₹ ${w.rate.toFixed(2)}</td><td class="text-right">₹ ${w.amount.toFixed(2)}</td></tr>`
+                ).join('');
+            let cr = d.charges.map(c =>
+                `<tr><td>${sr++}</td><td class="text-left">${c.name}</td><td>${c.qty}</td><td class="text-right">₹ ${c.rate.toFixed(2)}</td><td class="text-right">₹ ${c.amount.toFixed(2)}</td></tr>`
+                ).join('');
+            const tl = d.taxType === 'cgst_sgst' ? 'CGST 9% + SGST 9%' : 'IGST 18%';
+            document.getElementById('invoicePreviewContent').innerHTML = `
+                <div class="inv-watermark">NIRMAN GROUP</div>
+                <div class="inv-header">
+                    <div class="inv-header-left">
+                        <div class="inv-logo-box">RK</div>
+                        <div class="inv-company-info">
+                            <h2>RK ENTERPRISES</h2>
+                            <div class="tagline-inv">Moving Earth, Building Relationships</div>
+                            <p>H2 209, Swarn Rekha Society, Lockgram, Kalyan (E) - 421306</p>
+                            <p>7700991524 / 7977434470 | RKINFRA7979@GMAIL.COM</p>
+                            <p><strong>GSTIN:</strong> 27BZCPA8031P1Z7</p>
+                        </div>
+                    </div>
+                    <div class="inv-header-right">
+                        <h1>TAX INVOICE</h1>
+                        <p class="inv-number">Invoice #: <strong>${d.invoiceNumber}</strong></p>
+                        <p>Date: ${d.invoiceDate}</p>
+                    </div>
+                </div>
+                <div class="inv-date-range">
+                    <span>Period From:</span> ${d.periodFrom || 'N/A'} &nbsp;|&nbsp;
+                    <span>Period To:</span> ${d.periodTo || 'N/A'}
+                    ${d.billingPeriod ? `&nbsp;|&nbsp;<span>Ref:</span> ${d.billingPeriod}` : ''}
+                </div>
+                <div class="inv-details">
+                    <div class="bill-to">
+                        <h4>Bill To / Receiver</h4>
+                        <p><strong>${d.customer.name}</strong></p>
+                        ${d.customer.address?`<p>${d.customer.address}</p>`:''}
+                        ${d.customer.phone?`<p>${d.customer.phone}</p>`:''}
+                        ${d.customer.gstin?`<p><strong>GSTIN:</strong> ${d.customer.gstin}</p>`:''}
+                    </div>
+                    <div><span class="badge badge-${d.status}">${d.status.toUpperCase()}</span></div>
+                </div>
+                <table class="inv-table">
+                    <thead><tr><th>Sr.</th><th>Description</th><th>Qty</th><th>Rate (₹)</th><th>Amount (₹)</th></tr></thead>
+                    <tbody>${wr}${cr}${(!wr&&!cr)?'<tr><td colspan="5">No entries</td></tr>':''}</tbody>
+                </table>
+                <div class="inv-totals-section">
+                    <div class="inv-totals">
+                        <table>
+                            <tr><td>Subtotal</td><td>₹ ${sub.toFixed(2)}</td></tr>
+                            ${d.discountPercent>0?`<tr><td>Discount (${d.discountPercent}%)</td><td>- ₹ ${da.toFixed(2)}</td></tr>`:''}
+                            <tr><td>Taxable Value</td><td>₹ ${txbl.toFixed(2)}</td></tr>
+                            <tr><td>${tl}</td><td>₹ ${tax.toFixed(2)}</td></tr>
+                            <tr class="grand-total"><td><strong>Grand Total</strong></td><td><strong>₹ ${tot.toFixed(2)}</strong></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="inv-amount-words"><strong>Amount in words:</strong> ${n2w(tot)}</div>
+                <div class="inv-footer"><strong>Payment Terms:</strong> ${d.notes}</div>
+                <div class="inv-signature-section">
+                    <div class="bank-details"><strong>Bank:</strong> Axis Bank | A/C: 922020051156830 | IFSC: UTIB0003581 | MIDC Dombivali</div>
+                    <div class="inv-signature-box"><div class="sign-line"></div><p>For RK Enterprises</p><p>Authorized Signatory</p></div>
+                </div>
+                <div class="inv-powered-by">POWERED BY <span>NIRMAN GROUP</span></div>`;
+        }
+
+        function loadInvoiceList() {
+            const invs = gI();
+            const s = (document.getElementById('invoiceSearch')?.value || '').toLowerCase();
+            const sf = document.getElementById('invoiceStatusFilter')?.value || 'all';
+            let f = invs.filter(i => (!s || i.invoiceNumber.toLowerCase().includes(s) || i.customer.name.toLowerCase()
+                .includes(s)) && (sf === 'all' || i.status === sf));
+            f.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            const ctr = document.getElementById('invoiceListTable');
+            if (!f.length) { ctr.innerHTML =
+                    '<div class="empty-state"><div class="icon">📋</div><p>No invoices.</p></div>'; return; }
+            let h =
+                '<table><thead><tr><th>Invoice #</th><th>Date</th><th>Customer</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+            f.forEach(inv => {
+                const ws = inv.workItems.reduce((s, w) => s + w.amount, 0);
+                const cs = inv.charges.reduce((s, c) => s + c.amount, 0);
+                const st = ws + cs;
+                const da = st * (inv.discountPercent / 100);
+                const tot = Math.round((st - da) * 1.18);
+                h +=
+                    `<tr><td><strong>${inv.invoiceNumber}</strong></td><td>${inv.invoiceDate}</td><td>${inv.customer.name}</td><td><strong>₹ ${tot.toFixed(2)}</strong></td><td><select class="status-select badge badge-${inv.status}" onchange="updateInvStatus(${inv.id},this.value)" style="border:none;font-weight:700;cursor:pointer;padding:4px 10px;border-radius:16px;"><option value="pending" ${inv.status==='pending'?'selected':''}>PENDING</option><option value="paid" ${inv.status==='paid'?'selected':''}>PAID</option><option value="overdue" ${inv.status==='overdue'?'selected':''}>OVERDUE</option><option value="partial" ${inv.status==='partial'?'selected':''}>PARTIAL</option></select></td><td><button class="btn btn-sm btn-outline" onclick="viewInvoice(${inv.id})">View</button> <button class="btn btn-sm btn-warning" onclick="editInvoice(${inv.id})">Edit</button> <button class="btn btn-sm btn-danger" onclick="deleteInvoice(${inv.id})">Del</button></td></tr>`;
+            });
+            h += '</tbody></table>';
+            ctr.innerHTML = h;
+        }
+
+        function updateInvStatus(id, ns) {
+            let invs = gI();
+            const inv = invs.find(i => i.id === id);
+            if (inv) { inv.status = ns;
+                sI(invs);
+                loadInvoiceList();
+                loadDashboard();
+                showToast('Status: ' + ns.toUpperCase()); }
+        }
+
+        function viewInvoice(id) { const inv = gI().find(i => i.id === id); if (inv) { renderPreview(inv);
+                showPage('preview'); } }
+
+        function editInvoice(id) {
+            const inv = gI().find(i => i.id === id);
+            if (!inv) return;
+            document.getElementById('invNumberSuffix').value = inv.invoiceNumber.replace('RK', '');
+            document.getElementById('invNumberSuffix').dataset.auto = 'false';
+            updateFullInvNumber();
+            document.getElementById('fullInvNumber').dataset.editId = inv.id;
+            document.getElementById('fullInvNumber').dataset.editStatus = inv.status;
+            document.getElementById('fullInvNumber').dataset.editCreatedAt = inv.createdAt;
+            document.getElementById('invDate').value = inv.invoiceDate;
+            document.getElementById('periodFrom').value = inv.periodFrom || '';
+            document.getElementById('periodTo').value = inv.periodTo || '';
+            document.getElementById('billingPeriod').value = inv.billingPeriod || '';
+            document.getElementById('custName').value = inv.customer.name;
+            document.getElementById('custGST').value = inv.customer.gstin || '';
+            document.getElementById('custPhone').value = inv.customer.phone || '';
+            document.getElementById('custAddress').value = inv.customer.address || '';
+            document.getElementById('discountPercent').value = inv.discountPercent;
+            document.getElementById('taxType').value = inv.taxType;
+            document.getElementById('invNotes').value = inv.notes;
+            document.getElementById('workRecordsContainer').innerHTML = '';
+            document.getElementById('chargesContainer').innerHTML = '';
+            wrc = 0;
+            crc = 0;
+            if (inv.workItems.length) { inv.workItems.forEach(w => { addWorkRow(); const rows = document
+                        .querySelectorAll('#workRecordsContainer .work-row');
+                    const r = rows[rows.length - 1];
+                    const s = r.querySelector('.machine-select'); for (let o = 0; o < s.options.length; o++) { if (s
+                            .options[o].text === w.machineName) { s.selectedIndex = o; break; } }
+                    r.querySelector('.work-qty').value = w.months;
+                    r.querySelector('.work-rate').value = w.rate; }); } else { addWorkRow(); }
+            if (inv.charges.length) { inv.charges.forEach(c => { addChargeRow(); const rows = document
+                        .querySelectorAll('#chargesContainer .charge-row');
+                    const r = rows[rows.length - 1];
+                    r.querySelector('.charge-name').value = c.name;
+                    r.querySelector('.charge-qty').value = c.qty;
+                    r.querySelector('.charge-rate').value = c.rate; }); } else { addChargeRow(); }
+            calculateTotals();
+            showPage('new-invoice');
+            showToast('Editing...');
+        }
+
+        function deleteInvoice(id) { if (confirm('Delete permanently?')) { sI(gI().filter(i => i.id !== id));
+                loadInvoiceList();
+                loadDashboard();
+                showToast('Deleted.'); } }
+
+        function loadLedgerCustomers() {
+            const s = document.getElementById('ledgerCustomerSelect');
+            s.innerHTML = '<option value="">-- Select Customer --</option>';
+            gC().forEach(c => { s.innerHTML += `<option value="${c.name}">${c.name}</option>`; });
+        }
+
+        function loadLedger() {
+            const cn = document.getElementById('ledgerCustomerSelect').value;
+            if (!cn) { document.getElementById('ledgerContent').style.display = 'none';
+                document.getElementById('ledgerEmpty').style.display = 'block'; return; }
+            document.getElementById('ledgerContent').style.display = 'block';
+            document.getElementById('ledgerEmpty').style.display = 'none';
+            const invs = gI().filter(i => i.customer.name === cn).sort((a, b) => new Date(b.createdAt) - new Date(a
+            .createdAt));
+            let tb = 0,
+                tp = 0,
+                tpd = 0;
+            let rows = '';
+            invs.forEach(inv => {
+                const ws = inv.workItems.reduce((s, w) => s + w.amount, 0);
+                const cs = inv.charges.reduce((s, c) => s + c.amount, 0);
+                const st = ws + cs;
+                const da = st * (inv.discountPercent / 100);
+                const tot = Math.round((st - da) * 1.18);
+                tb += tot;
+                if (inv.status === 'paid') tp += tot;
+                else tpd += tot;
+                rows +=
+                    `<tr><td>${inv.invoiceNumber}</td><td>${inv.invoiceDate}</td><td>₹ ${tot.toFixed(2)}</td><td><span class="badge badge-${inv.status}">${inv.status.toUpperCase()}</span></td></tr>`;
+            });
+            document.getElementById('ledgerSummary').innerHTML = `
+                <div class="ledger-card"><p>Total Billed</p><h4>₹ ${tb.toFixed(2)}</h4></div>
+                <div class="ledger-card"><p>Total Paid</p><h4 style="color:#2e7d32;">₹ ${tp.toFixed(2)}</h4></div>
+                <div class="ledger-card"><p>Balance Pending</p><h4 style="color:#c62828;">₹ ${tpd.toFixed(2)}</h4></div>
+                <div class="ledger-card"><p>Invoices</p><h4>${invs.length}</h4></div>`;
+            document.getElementById('ledgerTable').innerHTML = invs.length ?
+                '<table><thead><tr><th>Invoice #</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead><tbody>' +
+                rows + '</tbody></table>' :
+                '<div class="empty-state"><p>No invoices for this customer.</p></div>';
+        }
+
+        function loadDashboard() {
+            const invs = gI();
+            const total = invs.length;
+            const paid = invs.filter(i => i.status === 'paid').length;
+            const pending = invs.filter(i => i.status === 'pending').length;
+            let rev = 0,
+                gstPaid = 0;
+            invs.forEach(i => {
+                const ws = i.workItems.reduce((s, w) => s + w.amount, 0);
+                const cs = i.charges.reduce((s, c) => s + c.amount, 0);
+                const st = ws + cs;
+                const txbl = st - st * (i.discountPercent / 100);
+                const tax = txbl * 0.18;
+                gstPaid += tax;
+                rev += Math.round(txbl + tax);
+            });
+            document.getElementById('dashboardStats').innerHTML = `
+                <div class="stat-card blue"><div class="stat-icon">📋</div><div class="stat-info"><h3>${total}</h3><p>Total Invoices</p></div></div>
+                <div class="stat-card green"><div class="stat-icon">✅</div><div class="stat-info"><h3>${paid}</h3><p>Paid</p></div></div>
+                <div class="stat-card orange"><div class="stat-icon">⏳</div><div class="stat-info"><h3>${pending}</h3><p>Pending</p></div></div>
+                <div class="stat-card purple"><div class="stat-icon">💰</div><div class="stat-info"><h3>₹ ${rev.toLocaleString('en-IN')}</h3><p>Total Revenue</p></div></div>
+                <div class="stat-card teal"><div class="stat-icon">🧾</div><div class="stat-info"><h3>₹ ${gstPaid.toLocaleString('en-IN',{minimumFractionDigits:0,maximumFractionDigits:0})}</h3><p>Total GST</p></div></div>
+                <div class="stat-card blue"><div class="stat-icon">👥</div><div class="stat-info"><h3>${gC().length}</h3><p>Customers</p></div></div>
+                <div class="stat-card green"><div class="stat-icon">🚛</div><div class="stat-info"><h3>${gM().length}</h3><p>Machines</p></div></div>`;
+            const rec = [...invs].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5);
+            let rh = rec.length ?
+                '<table><thead><tr><th>#</th><th>Date</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody>' :
+                '';
+            rec.forEach(i => { const ws = i.workItems.reduce((s, w) => s + w.amount, 0);
+                const cs = i.charges.reduce((s, c) => s + c.amount, 0);
+                const st = ws + cs;
+                const tot = Math.round((st - st * (i.discountPercent / 100)) * 1.18);
+                rh +=
+                    `<tr><td><strong>${i.invoiceNumber}</strong></td><td>${i.invoiceDate}</td><td>${i.customer.name}</td><td>₹ ${tot.toFixed(2)}</td><td><span class="badge badge-${i.status}">${i.status.toUpperCase()}</span></td></tr>`; });
+            rh += rec.length ? '</tbody></table>' :
+                '<div class="empty-state"><p>No invoices yet.</p></div>';
+            document.getElementById('recentInvoicesTable').innerHTML = rh;
+        }
+
+        function initApp() {
+            if (!gM().length) sM([{ id: 1, name: 'JCB 3DX', regNo: 'MH05FV3726' }, { id: 2, name: 'CAT 320D', regNo: '' }]);
+            loadDashboard();
+            document.getElementById('invNumberSuffix').value = nS();
+            document.getElementById('invNumberSuffix').dataset.auto = 'true';
+            updateFullInvNumber();
+            document.getElementById('invDate').value = new Date().toISOString().split('T')[0];
+            const now = new Date();
+            document.getElementById('periodFrom').value = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split(
+                'T')[0];
+            document.getElementById('periodTo').value = new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString().split(
+                'T')[0];
+            loadCustomerDropdown();
+            loadMachineDropdowns();
+            loadCustomerList();
+            loadMachineList();
+            calculateTotals();
+        }
+
+        if (sessionStorage.getItem('rke_final_auth') === '1') { document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('appContainer').style.display = 'flex';
+            initApp(); }
+        if (document.getElementById('appContainer').style.display === 'flex') calculateTotals();
     </script>
 </body>
 </html>
